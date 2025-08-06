@@ -388,7 +388,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Tambahkan event listener untuk tombol Print di header
         document.getElementById('printGroups').addEventListener('click', function() {
-            // Buat style untuk print yang hanya menampilkan jadwal
+            // Cek apakah game yang dipilih adalah Free Fire
+            const gameSelect = document.getElementById('gameSelect');
+            if (gameSelect && gameSelect.value === 'free-fire') {
+                // Jika Free Fire, fungsi print akan ditangani oleh jadwal-free-fire.js
+                return;
+            }
+            
+            // Buat style untuk print yang hanya menampilkan jadwal (untuk game selain Free Fire)
             const printStyle = document.createElement('style');
             printStyle.id = 'printStyle';
             printStyle.innerHTML = `
@@ -420,7 +427,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const printScheduleBtn = document.getElementById('printSchedule');
         if (printScheduleBtn) {
             printScheduleBtn.addEventListener('click', function() {
-                // Buat style untuk print yang hanya menampilkan jadwal
+                // Cek apakah game yang dipilih adalah Free Fire
+                const gameSelect = document.getElementById('gameSelect');
+                if (gameSelect && gameSelect.value === 'free-fire') {
+                    // Jika Free Fire, fungsi print akan ditangani oleh jadwal-free-fire.js
+                    return;
+                }
+                
+                // Buat style untuk print yang hanya menampilkan jadwal (untuk game selain Free Fire)
                 const printStyle = document.createElement('style');
                 printStyle.id = 'printStyle';
                 printStyle.innerHTML = `
@@ -450,7 +464,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         document.getElementById('exportGroups').addEventListener('click', function() {
-            exportToExcel();
+            showToast('Fitur export akan segera tersedia!', 'info');
         });
         
         // Tambahkan event listener untuk tombol Tambah Tim
@@ -521,8 +535,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const excelInputButtons = document.querySelectorAll('.excel-input-btn');
         excelInputButtons.forEach(button => {
             button.addEventListener('click', function() {
-                const potLetter = this.getAttribute('data-pot');
-                exportTeamListToExcel(potLetter);
+                showToast('Fitur export Excel akan segera tersedia!', 'info');
             });
         });
         
@@ -870,7 +883,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Dukung Pengembangan</h3>
                     <p class="text-gray-600 mb-6">Jika Anda merasa terbantu dengan tool ini, pertimbangkan untuk memberikan dukungan agar kami dapat terus mengembangkan fitur-fitur baru.</p>
-                    <a href="https://saweria.co/khalisdev" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 mb-4">
+                    <a href="https:
                         <i class="fas fa-donate mr-2"></i> Donasi via Saweria
                     </a>
                     <div class="mt-4">
@@ -1493,164 +1506,5 @@ generateScheduleBtn.addEventListener('click', function() {
         createParticles(windowWidth / 2, windowHeight / 4, 20);
         const dummyElement = document.createElement('div');
         return dummyElement;
-    }
-    
-    // Fungsi untuk export jadwal ke Excel
-    function exportToExcel() {
-        const tournamentName = document.getElementById('tournamentName').value || 'Tournament';
-        const workbook = XLSX.utils.book_new();
-        
-        // Create worksheet data
-        const wsData = [];
-        
-        // Add website info and logo (as text representation)
-        wsData.push(['TO', 'Tekno Ogi - Generator Esport']);
-        wsData.push([]);
-        
-        // Add title
-        wsData.push([tournamentName]);
-        wsData.push(['Jadwal Pertandingan']);
-        wsData.push([]);
-        
-        // Add metadata
-        wsData.push([`Tanggal: ${new Date().toLocaleDateString('id-ID')}`]);
-        wsData.push([`Waktu: ${new Date().toLocaleTimeString('id-ID')}`]);
-        wsData.push([]);
-        
-        // Add tournament info
-        const gameSelect = document.getElementById('gameSelect');
-        const selectedGame = gameSelect.options[gameSelect.selectedIndex]?.text || 'Game';
-        wsData.push([`Game: ${selectedGame}`]);
-        
-        const startDate = document.getElementById('startDate').value;
-        const endDate = document.getElementById('endDate').value;
-        wsData.push([`Periode: ${startDate} s/d ${endDate}`]);
-        
-        const timezoneSelect = document.getElementById('timezoneSelect');
-        const selectedTimezone = timezoneSelect.options[timezoneSelect.selectedIndex]?.text || 'WIB';
-        wsData.push([`Timezone: ${selectedTimezone}`]);
-        wsData.push([]);
-        
-        // Add headers
-        wsData.push(['Tanggal', 'Waktu', 'Match', 'Jenis', 'Pot', 'Keterangan']);
-        
-        // Get all rows from the schedule table
-        const scheduleTableBody = document.getElementById('scheduleTableBody');
-        const rows = scheduleTableBody.querySelectorAll('tr');
-        
-        // Add schedule data
-        rows.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            const rowData = [];
-            
-            // Extract data from each cell
-            cells.forEach(cell => {
-                rowData.push(cell.textContent.trim());
-            });
-            
-            wsData.push(rowData);
-        });
-        
-        // Add footer
-        wsData.push([]);
-        wsData.push(['© 2025 Tekno Ogi - Generator Esport. All Rights Reserved.']);
-        wsData.push(['https://teknoogi.com']);
-        
-        // Create worksheet and add to workbook
-        const ws = XLSX.utils.aoa_to_sheet(wsData);
-        
-        // Apply some styling (limited in XLSX)
-        // Set column widths
-        const colWidths = [{ wch: 15 }, { wch: 15 }, { wch: 25 }, { wch: 15 }, { wch: 10 }, { wch: 30 }];
-        ws['!cols'] = colWidths;
-        
-        XLSX.utils.book_append_sheet(workbook, ws, 'Jadwal');
-        
-        // Generate Excel file and trigger download
-        XLSX.writeFile(workbook, `${tournamentName.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_jadwal.xlsx`);
-        
-        // Log export activity
-        if (typeof exportLog !== 'undefined') {
-            exportLog.logExport('Excel', tournamentName);
-        }
-        
-        // Show donation modal after export
-        showDonationModal();
-        
-        showToast('File Excel berhasil diunduh!', 'success');
-    }
-    
-    // Fungsi untuk export daftar tim ke Excel
-    function exportTeamListToExcel(potLetter) {
-        const tournamentName = document.getElementById('tournamentName').value || 'Tournament';
-        const workbook = XLSX.utils.book_new();
-        
-        // Create worksheet data
-        const wsData = [];
-        
-        // Add website info and logo (as text representation)
-        wsData.push(['TO', 'Tekno Ogi - Generator Esport']);
-        wsData.push([]);
-        
-        // Add title
-        wsData.push([tournamentName]);
-        wsData.push([`Daftar Tim - Pot ${potLetter}`]);
-        wsData.push([]);
-        
-        // Add metadata
-        wsData.push([`Tanggal: ${new Date().toLocaleDateString('id-ID')}`]);
-        wsData.push([`Waktu: ${new Date().toLocaleTimeString('id-ID')}`]);
-        wsData.push([]);
-        
-        // Add headers
-        wsData.push(['No', 'Nama Tim', 'Logo', 'Kontak']);
-        
-        // Get teams from the table
-        const teamsTable = document.getElementById('teamsTable');
-        if (teamsTable) {
-            const rows = teamsTable.querySelectorAll('tbody tr');
-            
-            // Filter teams by pot
-            let rowNumber = 1;
-            rows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                const teamPot = cells[2].textContent.trim();
-                
-                if (teamPot === potLetter) {
-                    const rowData = [
-                        rowNumber++,
-                        cells[1].textContent.trim(), // Nama Tim
-                        cells[3].textContent.trim(), // Logo
-                        cells[4].textContent.trim()  // Kontak
-                    ];
-                    wsData.push(rowData);
-                }
-            });
-        }
-        
-        // Add footer
-        wsData.push([]);
-        wsData.push(['© 2025 Tekno Ogi - Generator Esport. All Rights Reserved.']);
-        wsData.push(['https://teknoogi.com']);
-        
-        // Create worksheet and add to workbook
-        const ws = XLSX.utils.aoa_to_sheet(wsData);
-        
-        // Apply some styling (limited in XLSX)
-        // Set column widths
-        const colWidths = [{ wch: 5 }, { wch: 25 }, { wch: 30 }, { wch: 20 }];
-        ws['!cols'] = colWidths;
-        
-        XLSX.utils.book_append_sheet(workbook, ws, `Tim Pot ${potLetter}`);
-        
-        // Generate Excel file and trigger download
-        XLSX.writeFile(workbook, `${tournamentName.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_tim_pot_${potLetter.toLowerCase()}.xlsx`);
-        
-        // Log export activity
-        if (typeof exportLog !== 'undefined') {
-            exportLog.logExport('Excel', `${tournamentName} - Tim Pot ${potLetter}`);
-        }
-        
-        showToast(`Daftar tim Pot ${potLetter} berhasil diunduh!`, 'success');
     }
 });
