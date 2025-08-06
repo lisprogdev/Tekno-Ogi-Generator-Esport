@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Tools - Tekno Ogi Generator Esport</title>
+    <style>
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      /* Keeping all original styles except status badge related styles */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      .hero-tools-bg {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 35%,
+          #334155 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-tools-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            rgba(59, 130, 246, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            rgba(168, 85, 247, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(34, 197, 94, 0.05) 0%,
+            transparent 50%
+          );
+        animation: pulse-bg 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse-bg {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+
+      .nav-active {
+        color: #93c5fd;
+      }
+
+      .mobile-menu {
+        transition: all 0.3s ease-in-out;
+      }
+
+      .tool-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .tool-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .tool-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+        opacity: 0;
+      }
+
+      .tool-card:hover::before {
+        animation: shimmer 1s ease-in-out;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%) translateY(-100%) rotate(45deg);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100%) translateY(100%) rotate(45deg);
+          opacity: 0;
+        }
+      }
+
+      .tool-icon {
+        transition: all 0.3s ease;
+      }
+
+      .tool-card:hover .tool-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .gradient-border {
+        background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+        background-size: 300% 300%;
+        animation: gradient-border 3s ease infinite;
+      }
+
+      @keyframes gradient-border {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .status-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        z-index: 10;
+      }
+
+      .status-available {
+        background-color: rgba(34, 197, 94, 0.2);
+        color: #22c55e;
+        border: 1px solid rgba(34, 197, 94, 0.3);
+      }
+
+      .status-coming-soon {
+        background-color: rgba(251, 191, 36, 0.2);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.3);
+      }
+
+      .status-beta {
+        background-color: rgba(168, 85, 247, 0.2);
+        color: #a855f7;
+        border: 1px solid rgba(168, 85, 247, 0.3);
+      }
+
+      .category-filter {
+        transition: all 0.3s ease;
+      }
+
+      .category-filter.active {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        color: white;
+        transform: scale(1.05);
+      }
+
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      @media (min-width: 1024px) {
+        .tool-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .featured-tool {
+        grid-column: span 2;
+      }
+
+      @media (max-width: 768px) {
+        .featured-tool {
+          grid-column: span 1;
+        }
+      }
+
+      .glow-effect {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      }
+
+      .tool-card:hover .glow-effect {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-950 text-white shadow-xl fixed w-full z-50">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <!-- Logo and Website Name -->
+          <div class="flex items-center">
+            <img
+              src="../images/logo.svg"
+              alt="Tekno Ogi Logo"
+              class="mr-3 h-10 w-10 rounded-md"
+            />
+            <a href="../index.html" class="text-xl font-bold text-blue-200"
+              >Tekno Ogi - Generator Esport</a
+            >
+          </div>
+
+          <!-- Navigation Links - Desktop -->
+          <div class="hidden md:flex items-center space-x-6">
+            <a
+              href="../index.html#beranda"
+              class="flex items-center hover:text-blue-300 transition duration-300"
+            >
+              <i class="fas fa-home mr-2"></i>
+              <span>Beranda</span>
+            </a>
+            <a
+              href="../index.html#tentang"
+              class="flex items-center hover:text-blue-300 transition duration-300"
+            >
+              <i class="fas fa-info-circle mr-2"></i>
+              <span>Tentang Kami</span>
+            </a>
+            <a
+              href="#tools"
+              class="flex items-center hover:text-blue-300 transition duration-300 nav-active"
+            >
+              <i class="fas fa-tools mr-2"></i>
+              <span>Tools</span>
+            </a>
+            <a
+              href="../index.html#kontak"
+              class="flex items-center hover:text-blue-300 transition duration-300"
+            >
+              <i class="fas fa-envelope mr-2"></i>
+              <span>Kontak</span>
+            </a>
+            <a
+              href="https://saweria.co/khalisdev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-blue-950 font-bold py-2 px-4 rounded-lg transition duration-300"
+            >
+              <i class="fas fa-hand-holding-heart mr-2"></i>
+              <span>Donate</span>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="text-white hover:text-blue-300 focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden mt-4 pb-2">
+          <a
+            href="../index.html#beranda"
+            class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md"
+          >
+            <i class="fas fa-home mr-2"></i>
+            <span>Beranda</span>
+          </a>
+          <a
+            href="../index.html#tentang"
+            class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md"
+          >
+            <i class="fas fa-info-circle mr-2"></i>
+            <span>Tentang Kami</span>
+          </a>
+          <a
+            href="#tools"
+            class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md nav-active"
+          >
+            <i class="fas fa-tools mr-2"></i>
+            <span>Tools</span>
+          </a>
+          <a
+            href="../index.html#kontak"
+            class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md"
+          >
+            <i class="fas fa-envelope mr-2"></i>
+            <span>Kontak</span>
+          </a>
+          <a
+            href="https://saweria.co/khalisdev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block py-2 px-4 mt-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-blue-950 font-bold rounded-lg"
+          >
+            <i class="fas fa-hand-holding-heart mr-2"></i>
+            <span>Donate</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-tools-bg text-white pt-32 pb-20 relative">
+      <div class="particles"></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+          <div
+            class="inline-flex items-center bg-blue-600/20 text-blue-300 px-6 py-2 rounded-full text-sm mb-6 border border-blue-500/30"
+          >
+            <i class="fas fa-tools mr-2"></i>
+            <span>Koleksi Alat Esport</span>
+            <div
+              class="ml-3 w-2 h-2 bg-green-400 rounded-full animate-pulse"
+            ></div>
+          </div>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+          >
+            Tools
+            <span
+              class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+              >Profesional</span
+            >
+          </h1>
+
+          <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+            Koleksi lengkap tools untuk mengelola turnamen esport Anda dengan
+            mudah dan profesional
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <div
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20"
+            >
+              <i class="fas fa-check text-green-400 mr-2"></i>
+              <span>100% Offline</span>
+            </div>
+            <div
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20"
+            >
+              <i class="fas fa-download text-blue-400 mr-2"></i>
+              <span>Siap Ekspor</span>
+            </div>
+            <div
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20"
+            >
+              <i class="fas fa-mobile-alt text-purple-400 mr-2"></i>
+              <span>Ramah Perangkat Mobile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative wave -->
+      <div
+        class="absolute bottom-0 left-0 w-full overflow-hidden"
+        style="height: 100px"
+      >
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style="height: 100%; width: 100%"
+        >
+          <path
+            d="M0,100 C150,200 350,0 500,100 L500,150 L0,150 Z"
+            style="stroke: none; fill: #f1f5f9"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button
+            class="category-filter active px-6 py-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300"
+            data-category="all"
+          >
+            <i class="fas fa-th-large mr-2"></i>
+            Semua Tools
+          </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300"
+            data-category="tournament"
+          >
+            <i class="fas fa-trophy mr-2"></i>
+            Turnamen
+          </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300"
+            data-category="management"
+          >
+            <i class="fas fa-cogs mr-2"></i>
+            Manajemen
+          </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300"
+            data-category="design"
+          >
+            <i class="fas fa-palette mr-2"></i>
+            Desain
+          </button>
+        </div>
+
+        <!-- Tools Grid -->
+        <div class="tool-grid">
+          <!-- Featured Tool: Tournament Creator -->
+          <div
+            class="tool-card featured-tool bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 text-white relative"
+            data-category="tournament"
+          >
+            <div class="status-badge status-coming-soon">
+              <i class="fas fa-clock mr-1"></i>Segera Hadir
+            </div>
+
+            <div class="flex items-start justify-between mb-6">
+              <div
+                class="tool-icon w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center glow-effect"
+              >
+                <i class="fas fa-trophy text-4xl text-yellow-300"></i>
+              </div>
+              <div class="text-right">
+                <span
+                  class="bg-yellow-400/20 text-yellow-300 px-3 py-1 rounded-full text-sm font-semibold"
+                >
+                  Featured
+                </span>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mb-3">Pembuat Turnamen</h3>
+            <p class="text-blue-100 mb-6 text-lg">
+              Tool lengkap untuk membuat turnamen dari awal hingga akhir. Kelola
+              peserta, bracket, jadwal, dan hasil dalam satu platform.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-sm"
+                >Pembuat Bagan</span
+              >
+              <span class="bg-white/20 px-3 py-1 rounded-full text-sm"
+                >Schedule Maker</span
+              >
+              <span class="bg-white/20 px-3 py-1 rounded-full text-sm"
+                >Result Tracker</span
+              >
+            </div>
+
+            <button
+              class="w-full bg-gray-400 text-white font-bold py-4 px-6 rounded-xl cursor-not-allowed"
+              disabled
+            >
+              <i class="fas fa-clock mr-2"></i>
+              Segera Hadir
+            </button>
+          </div>
+
+          <!-- Group Generator -->
+<div
+  class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl relative"
+  data-category="tournament"
+>
+  <!-- Status Badge with a lower z-index -->
+  <div class="status-badge status-available" style="z-index: 1;">
+    <i class="fas fa-check mr-1"></i>Tersedia
+  </div>
+
+  <div
+    class="tool-icon w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto pulse-animation"
+  >
+    <i class="fas fa-users text-white text-2xl"></i>
+  </div>
+
+  <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">
+    Group Generator
+  </h3>
+  <p class="text-gray-600 text-center mb-6">
+    Buat grup turnamen dengan pembagian yang adil dan seimbang secara
+    otomatis.
+  </p>
+
+  <div class="space-y-2 mb-6">
+    <div class="flex items-center text-sm text-gray-500">
+      <i class="fas fa-check-circle text-green-500 mr-2"></i>
+      Penyeimbangan tim otomatis
+    </div>
+    <div class="flex items-center text-sm text-gray-500">
+      <i class="fas fa-check-circle text-green-500 mr-2"></i>
+      Ukuran grup yang dapat disesuaikan
+    </div>
+    <div class="flex items-center text-sm text-gray-500">
+      <i class="fas fa-check-circle text-green-500 mr-2"></i>
+      Ekspor ke PDF/Excel
+    </div>
+  </div>
+
+  <!-- Button with a higher z-index to make sure it's above the badge -->
+  <a
+    href="./Sub-Page/Grup-Generator.html"
+    class="block w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300"
+    style="z-index: 10; position: relative;"  
+  >
+    <i class="fas fa-play mr-2"></i>
+    Buat Grup
+  </a>
+</div>
+
+
+          <!-- Bracket Generator -->
+          <div
+            class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl relative"
+            data-category="tournament"
+          >
+            <div class="status-badge status-coming-soon">
+              <i class="fas fa-clock mr-1"></i>Segera Hadir
+            </div>
+
+            <div
+              class="tool-icon w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-sitemap text-white text-2xl"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">
+              Pembuat Bagan
+            </h3>
+            <p class="text-gray-600 text-center mb-6">
+              Generate bracket single/double elimination dengan visualisasi yang
+              menarik.
+            </p>
+
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Single & Double Elimination
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Interactive bracket view
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Real-time updates
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-gray-400 text-white font-bold py-3 px-4 rounded-lg cursor-not-allowed"
+              disabled
+            >
+              <i class="fas fa-clock mr-2"></i>
+              Segera Hadir
+            </button>
+          </div>
+
+          <!-- Schedule Generator -->
+          <div
+            class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl relative"
+            data-category="management"
+          >
+            <div class="status-badge status-available">
+              <i class="fas fa-check mr-1"></i>Tersedia
+            </div>
+
+            <div
+              class="tool-icon w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-calendar-alt text-white text-2xl"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">
+              Pembuat Jadwal
+            </h3>
+            <p class="text-gray-600 text-center mb-6">
+              Atur jadwal pertandingan dengan manajemen waktu yang efisien.
+            </p>
+
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                Alokasi waktu otomatis
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                Manajemen tempat pertandingan
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                Deteksi konflik jadwal
+              </div>
+            </div>
+
+            <a
+              href="Sub-Page/Jadwal-Generator.html"
+              class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition duration-300 inline-block text-center"
+            >
+              <i class="fas fa-play mr-2"></i>
+              Buat Jadwal
+            </a>
+          </div>
+
+          <!-- Technical Meeting -->
+          <div
+            class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl relative"
+            data-category="management"
+          >
+            <div class="status-badge status-available">
+              <i class="fas fa-check mr-1"></i>Tersedia
+            </div>
+
+            <div
+              class="tool-icon w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-clipboard-list text-white text-2xl"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">
+              Technical Meeting
+            </h3>
+            <p class="text-gray-600 text-center mb-6">
+              Buat agenda dan dokumentasi technical meeting yang profesional.
+            </p>
+
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                Pembuat agenda otomatis
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                Template peraturan turnamen
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                Pelacak kehadiran peserta
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold py-3 px-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition duration-300"
+            >
+              <i class="fas fa-play mr-2"></i>
+              Mulai TM
+            </button>
+          </div>
+
+          <!-- Match Reporter -->
+          <div
+            class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl relative"
+            data-category="management"
+          >
+            <div class="status-badge status-coming-soon">
+              <i class="fas fa-clock mr-1"></i>Segera Hadir
+            </div>
+
+            <div
+              class="tool-icon w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-trophy text-white text-2xl"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">
+              Pelapor Pertandingan
+            </h3>
+            <p class="text-gray-600 text-center mb-6">
+              Catat hasil pertandingan dan generate laporan turnamen otomatis.
+            </p>
+
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Live score tracking
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Auto bracket update
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Statistics dashboard
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-gray-400 text-white font-bold py-3 px-4 rounded-lg cursor-not-allowed"
+              disabled
+            >
+              <i class="fas fa-clock mr-2"></i>
+              Segera Hadir
+            </button>
+          </div>
+
+          <!-- Certificate Generator -->
+          <div
+            class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl relative"
+            data-category="design"
+          >
+            <div class="status-badge status-coming-soon">
+              <i class="fas fa-clock mr-1"></i>Segera Hadir
+            </div>
+
+            <div
+              class="tool-icon w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-certificate text-white text-2xl"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">
+              Pembuat Sertifikat
+            </h3>
+            <p class="text-gray-600 text-center mb-6">
+              Buat sertifikat pemenang dan peserta dengan template yang menarik.
+            </p>
+
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Berbagai pilihan template
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Kustomisasi branding
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Pembuatan massal
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-gray-400 text-white font-bold py-3 px-4 rounded-lg cursor-not-allowed"
+              disabled
+            >
+              <i class="fas fa-clock mr-2"></i>
+              Segera Hadir
+            </button>
+          </div>
+
+          <!-- Team Manager -->
+          <div
+            class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl relative"
+            data-category="management"
+          >
+            <div class="status-badge status-coming-soon">
+              <i class="fas fa-clock mr-1"></i>Segera Hadir
+            </div>
+
+            <div
+              class="tool-icon w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-users-cog text-white text-2xl"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">
+              Pengelola Tim
+            </h3>
+            <p class="text-gray-600 text-center mb-6">
+              Kelola data tim, pemain, dan informasi registrasi dengan mudah.
+            </p>
+
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Registrasi tim
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Database pemain
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Manajemen kontak
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-gray-400 text-white font-bold py-3 px-4 rounded-lg cursor-not-allowed"
+              disabled
+            >
+              <i class="fas fa-clock mr-2"></i>
+              Segera Hadir
+            </button>
+          </div>
+
+          <!-- Stream Overlay -->
+          <div
+            class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl relative"
+            data-category="design"
+          >
+            <div class="status-badge status-coming-soon">
+              <i class="fas fa-clock mr-1"></i>Segera Hadir
+            </div>
+
+            <div
+              class="tool-icon w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-video text-white text-2xl"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">
+              Overlay Siaran
+            </h3>
+            <p class="text-gray-600 text-center mb-6">
+              Buat overlay streaming yang menarik untuk broadcast turnamen Anda.
+            </p>
+
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Desain overlay kustom
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Tampilan skor waktu nyata
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                Integrasi dengan OBS
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-gray-400 text-white font-bold py-3 px-4 rounded-lg cursor-not-allowed"
+              disabled
+            >
+              <i class="fas fa-clock mr-2"></i>
+              Segera Hadir
+            </button>
+          </div>
+        </div>
+
+        <!-- Support Section -->
+        <div
+          class="mt-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center"
+        >
+          <div class="max-w-3xl mx-auto">
+            <div
+              class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-heart text-3xl text-red-300"></i>
+            </div>
+
+            <h3 class="text-3xl font-bold mb-4">Dukung Pengembangan Tools</h3>
+            <p class="text-xl mb-8 text-blue-100">
+              Jika tools ini membantu Anda mengelola turnamen esport,
+              pertimbangkan untuk memberikan dukungan kepada developer untuk
+              pengembangan fitur baru dan pemeliharaan platform.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://saweria.co/khalisdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-white text-blue-600 font-bold py-4 px-8 rounded-xl hover:bg-blue-50 transition duration-300 shadow-lg"
+              >
+                <i class="fas fa-external-link-alt mr-2"></i>
+                Donasi di Saweria
+              </a>
+              <button
+                class="bg-white/20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl hover:bg-white/30 transition duration-300 border border-white/30"
+              >
+                <i class="fas fa-share-alt mr-2"></i>
+                Share ke Teman
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-white py-16 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <div class="flex items-center mb-6">
+              <div class="relative">
+                <div
+                  class="absolute inset-0 bg-blue-400 rounded-md blur-sm opacity-40"
+                ></div>
+                <img
+                  src="../images/logo.svg"
+                  alt="Tekno Ogi Logo"
+                  class="relative mr-3 h-12 w-12 rounded-md"
+                />
+              </div>
+              <span class="text-2xl font-bold text-blue-200">Tekno Ogi</span>
+            </div>
+            <p class="text-blue-200 mb-6 text-lg">
+              Platform offline untuk mengelola event esport dengan mudah. Buat
+              grup, bagan, jadwal pertandingan, dan pertemuan teknis tanpa perlu
+              database.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110"
+              >
+                <i class="fab fa-twitter text-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110"
+              >
+                <i class="fab fa-instagram text-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110"
+              >
+                <i class="fab fa-facebook-f text-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110"
+              >
+                <i class="fab fa-youtube text-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110"
+              >
+                <i class="fab fa-discord text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-6 text-blue-200">
+              <i class="fas fa-link mr-2"></i>
+              Tautan Cepat
+            </h3>
+            <div class="grid grid-cols-2 gap-4">
+              <ul class="space-y-4">
+                <li>
+                  <a
+                    href="index.html#beranda"
+                    class="text-blue-200 hover:text-white transition duration-300 flex items-center"
+                  >
+                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                    Beranda
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="index.html#tentang"
+                    class="text-blue-200 hover:text-white transition duration-300 flex items-center"
+                  >
+                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                    Tentang Kami
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#tools"
+                    class="text-blue-200 hover:text-white transition duration-300 flex items-center"
+                  >
+                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                    Tools
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="../index.html#kontak"
+                    class="text-blue-200 hover:text-white transition duration-300 flex items-center"
+                  >
+                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                    Kontak
+                  </a>
+                </li>
+              </ul>
+              <ul class="space-y-4">
+                <li>
+                  <a
+                    href="#"
+                    class="text-blue-200 hover:text-white transition duration-300 flex items-center"
+                  >
+                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                    Dokumentasi
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-blue-200 hover:text-white transition duration-300 flex items-center"
+                  >
+                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                    Tutorial
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-blue-200 hover:text-white transition duration-300 flex items-center"
+                  >
+                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                    Bantuan
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-blue-200 hover:text-white transition duration-300 flex items-center"
+                  >
+                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-blue-800 mt-12 pt-8 text-center">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-blue-300 mb-4 md:mb-0">
+              <i class="far fa-copyright mr-1"></i>
+              2025 Tekno Ogi - Generator Esport. All Rights Reserved.
+            </p>
+            <div class="flex space-x-6">
+              <a
+                href="#"
+                class="text-blue-300 hover:text-white transition duration-300"
+                >Syarat & Ketentuan</a
+              >
+              <a
+                href="#"
+                class="text-blue-300 hover:text-white transition duration-300"
+                >Kebijakan Privasi</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a
+      id="back-to-top"
+      href="#"
+      class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 invisible transition-all duration-300"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Core JavaScript Files -->
+    <script src="../js/main.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/error.js"></script>
+    <script src="../js/tools.js"></script>
+  </body>
+</html>

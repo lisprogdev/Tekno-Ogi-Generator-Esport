@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Tekno Ogi - Generator Esport</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 10, 50, 0.7), rgba(0, 10, 50, 0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .about-bg {
+            background-color: #f1f5f9;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234338ca' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+       
+        .contact-bg {
+            background-image: linear-gradient(rgba(0, 10, 50, 0.8), rgba(0, 10, 50, 0.8)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-active {
+            color: #93c5fd;
+        }
+        .mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+        .feature-card {
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #60a5fa, #93c5fd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+        .tool-card:hover::before {
+            animation: shimmer 1s ease-in-out;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-950 text-white shadow-xl fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo and Website Name -->
+                <div class="flex items-center">
+                    <img src="images/logo.svg" alt="Tekno Ogi Logo" class="mr-3 h-10 w-10 rounded-md">
+                    <a href="#" class="text-xl font-bold text-blue-200">Tekno Ogi - Generator Esport</a>
+                </div>
+                
+                <!-- Navigation Links - Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#beranda" class="flex items-center hover:text-blue-300 transition duration-300">
+                        <i class="fas fa-home mr-2"></i>
+                        <span>Beranda</span>
+                    </a>
+                    <a href="#tentang" class="flex items-center hover:text-blue-300 transition duration-300">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <span>Tentang Kami</span>
+                    </a>
+                    <a href="Page/tools.html" class="flex items-center hover:text-blue-300 transition duration-300">
+                        <i class="fas fa-tools mr-2"></i>
+                        <span>Tools</span>
+                    </a>
+                    <a href="#kontak" class="flex items-center hover:text-blue-300 transition duration-300">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>Kontak</span>
+                    </a>
+                    <a href="https://saweria.co/khalisdev" target="_blank" rel="noopener noreferrer" class="flex items-center bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-blue-950 font-bold py-2 px-4 rounded-lg transition duration-300">
+                        <i class="fas fa-hand-holding-heart mr-2"></i>
+                        <span>Donate</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" type="button" class="text-white hover:text-blue-300 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="mobile-menu hidden md:hidden mt-4 pb-2">
+                <a href="#beranda" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+                    <i class="fas fa-home mr-2"></i>
+                    <span>Beranda</span>
+                </a>
+                <a href="#tentang" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <span>Tentang Kami</span>
+                </a>
+                <a href="Page/tools.html" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+                    <i class="fas fa-tools mr-2"></i>
+                    <span>Tools</span>
+                </a>
+                <a href="#kontak" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span>Kontak</span>
+                </a>
+                <a href="https://saweria.co/khalisdev" target="_blank" rel="noopener noreferrer" class="block py-2 px-4 mt-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-blue-950 font-bold rounded-lg">
+                    <i class="fas fa-hand-holding-heart mr-2"></i>
+                    <span>Donate</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero/Beranda Section -->
+    <section id="beranda" class="hero-bg text-white pt-32 pb-24 md:pt-40 md:pb-32 relative">
+        <!-- Animated Particles -->
+        <div class="particles"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <span class="inline-block bg-blue-600/30 text-blue-300 px-4 py-1 rounded-full text-sm mb-4">
+                        <i class="fas fa-gamepad mr-2"></i>Esport Event Generator
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Tekno Ogi <span class="gradient-text">Generator Esport</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-10 text-blue-100 max-w-2xl">
+                        Platform offline untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan, dan technical meeting tanpa perlu database.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="Page/tools.html" class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-blue-900/30">
+                            <i class="fas fa-tools mr-2"></i>
+                            Lihat Tools
+                        </a>
+                        <a href="#tentang" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold py-3 px-8 border border-white/30 rounded-lg transition duration-300">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="relative">
+                        <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+                        <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/20 to-transparent rounded-3xl backdrop-blur-sm"></div>
+                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Esport Gaming" class="rounded-3xl shadow-2xl relative z-10 border border-white/10 floating" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl font-bold text-blue-300 mb-1">
+                        <i class="fas fa-users text-xl mr-2"></i>
+                        Groups
+                    </div>
+                    <div class="text-sm text-blue-100">Buat grup turnamen</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl font-bold text-blue-300 mb-1">
+                        <i class="fas fa-sitemap text-xl mr-2"></i>
+                        Brackets
+                    </div>
+                    <div class="text-sm text-blue-100">Buat bracket turnamen</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl font-bold text-blue-300 mb-1">
+                        <i class="fas fa-calendar-alt text-xl mr-2"></i>
+                        Schedule
+                    </div>
+                    <div class="text-sm text-blue-100">Atur jadwal pertandingan</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl font-bold text-blue-300 mb-1">
+                        <i class="fas fa-clipboard-list text-xl mr-2"></i>
+                        TM
+                    </div>
+                    <div class="text-sm text-blue-100">Technical Meeting</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden" style="height: 80px;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0,100 C150,200 350,0 500,100 L500,150 L0,150 Z" style="stroke: none; fill: #f1f5f9;"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang" class="about-bg py-20 md:py-28 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm mb-4">
+                    <i class="fas fa-info-circle mr-2"></i>Tentang Platform Kami
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-950 mb-4">
+                    Apa itu <span class="text-blue-600">Tekno Ogi</span>?
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Tekno Ogi adalah platform offline untuk mengelola event esport dengan mudah. Semua data tersimpan di perangkat Anda, tanpa perlu koneksi internet atau database.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-200 rounded-full opacity-20"></div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 hexagon w-16 h-16 flex items-center justify-center mb-6 mx-auto relative z-10">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-blue-950 relative z-10">Tanpa Internet</h3>
+                    <p class="text-gray-700 text-center relative z-10">Bekerja 100% offline. Tidak memerlukan koneksi internet atau database. Semua data disimpan di penyimpanan lokal.</p>
+                    <div class="mt-6 text-center relative z-10">
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                            <span>Pelajari lebih lanjut</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform md:translate-y-6 relative overflow-hidden">
+                    <div class="absolute -left-10 -top-10 w-40 h-40 bg-blue-200 rounded-full opacity-20"></div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 hexagon w-16 h-16 flex items-center justify-center mb-6 mx-auto relative z-10">
+                        <i class="fas fa-sliders-h text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-blue-950 relative z-10">Mudah Digunakan</h3>
+                    <p class="text-gray-700 text-center relative z-10">Antarmuka yang intuitif memudahkan pengguna untuk membuat grup, bracket, jadwal, dan technical meeting dengan cepat.</p>
+                    <div class="mt-6 text-center relative z-10">
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                            <span>Pelajari lebih lanjut</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-200 rounded-full opacity-20"></div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 hexagon w-16 h-16 flex items-center justify-center mb-6 mx-auto relative z-10">
+                        <i class="fas fa-download text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-blue-950 relative z-10">Ekspor Hasil</h3>
+                    <p class="text-gray-700 text-center relative z-10">Ekspor hasil dalam berbagai format termasuk PDF, Excel, dan gambar untuk mempermudah publikasi turnamen Anda.</p>
+                    <div class="mt-6 text-center relative z-10">
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                            <span>Pelajari lebih lanjut</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 relative z-10">
+                    <span class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm mb-4">
+                        <i class="fas fa-trophy mr-2"></i>Keunggulan Kami
+                    </span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-blue-950 mb-6">
+                        Mengapa memilih Tekno Ogi untuk event esport Anda?
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <div class="bg-blue-100 rounded-full p-2 mt-1 mr-4">
+                                <i class="fas fa-check text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Penyimpanan Lokal</h4>
+                                <p class="text-gray-600">Semua data tersimpan di perangkat Anda, tanpa perlu database atau server.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <div class="bg-blue-100 rounded-full p-2 mt-1 mr-4">
+                                <i class="fas fa-check text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Format Turnamen Lengkap</h4>
+                                <p class="text-gray-600">Mendukung berbagai format turnamen mulai dari grup, single elimination, double elimination, dll.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <div class="bg-blue-100 rounded-full p-2 mt-1 mr-4">
+                                <i class="fas fa-check text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Sesuai Standar Esport</h4>
+                                <p class="text-gray-600">Dibuat dengan memperhatikan standar penyelenggaraan turnamen esport profesional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 grid grid-cols-2 gap-4 relative z-10">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Esport Team" class="rounded-xl h-full w-full object-cover" />
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1 transform translate-y-8 shadow-lg floating">
+                        <img src="https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gaming Setup" class="rounded-xl h-full w-full object-cover" />
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1 transform translate-y-4 shadow-lg floating" style="animation-delay: 1s;">
+                        <img src="https://images.unsplash.com/photo-1603481546579-65d935ba9966?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Esport Event" class="rounded-xl h-full w-full object-cover" />
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1 transform -translate-y-4 shadow-lg floating" style="animation-delay: 2s;">
+                        <img src="https://images.unsplash.com/photo-1542751371-6533d4849843?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gaming Controller" class="rounded-xl h-full w-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden" style="height: 80px; z-index: 5;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0,50 C150,150 350,0 500,50 L500,150 L0,150 Z" style="stroke: none; fill: #0f172a;"></path>
+            </svg>
+        </div>
+    </section>
+    
+   
+    <!-- Kontak Section -->
+    <section id="kontak" class="contact-bg text-white py-20 md:py-28 relative">
+        <div class="particles"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-blue-500/30 text-blue-300 px-4 py-1 rounded-full text-sm mb-4">
+                    <i class="fas fa-envelope mr-2"></i>Hubungi Kami
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                    Ada pertanyaan? <span class="text-blue-300">Hubungi kami</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-8"></div>
+                <p class="text-lg max-w-3xl mx-auto">Ada pertanyaan atau saran? Jangan ragu untuk menghubungi kami kapan saja.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+                <div class="lg:col-span-3 bg-white/10 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-white/10">
+                    <div class="grid grid-cols-1 md:grid-cols-3">
+                        <div class="p-6 md:p-8 bg-gradient-to-br from-blue-800/40 to-blue-900/40 border-b md:border-b-0 md:border-r border-white/10">
+                            <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="fas fa-map-marker-alt text-blue-300 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-xl text-blue-300 mb-2">Alamat</h4>
+                            <p class="text-blue-100">Jl. Esport No. 123, Jakarta Pusat, Indonesia</p>
+                        </div>
+                        
+                        <div class="p-6 md:p-8 bg-gradient-to-br from-blue-800/40 to-blue-900/40 border-b md:border-b-0 md:border-r border-white/10">
+                            <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="fas fa-envelope text-blue-300 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-xl text-blue-300 mb-2">Email</h4>
+                            <p class="text-blue-100">info@teknoogi.com</p>
+                            <p class="text-blue-100">support@teknoogi.com</p>
+                        </div>
+                        
+                        <div class="p-6 md:p-8 bg-gradient-to-br from-blue-800/40 to-blue-900/40">
+                            <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="fas fa-phone-alt text-blue-300 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-xl text-blue-300 mb-2">Telepon</h4>
+                            <p class="text-blue-100">+62 123 4567 890</p>
+                            <p class="text-blue-100">+62 098 7654 321</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8 md:p-10 bg-gradient-to-br from-blue-700/30 to-blue-900/30">
+                        <h3 class="text-2xl font-bold mb-6 text-center">
+                            <i class="fas fa-paper-plane mr-2 text-blue-300"></i>
+                            Kirim Pesan
+                        </h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-blue-200 font-bold mb-2">
+                                        <i class="fas fa-user text-blue-300 mr-2"></i>
+                                        Nama Lengkap
+                                    </label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 text-white" placeholder="Masukkan nama Anda">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-blue-200 font-bold mb-2">
+                                        <i class="fas fa-envelope text-blue-300 mr-2"></i>
+                                        Email
+                                    </label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 text-white" placeholder="Masukkan email Anda">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-blue-200 font-bold mb-2">
+                                    <i class="fas fa-tag text-blue-300 mr-2"></i>
+                                    Subjek
+                                </label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 text-white" placeholder="Masukkan subjek pesan">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-blue-200 font-bold mb-2">
+                                    <i class="fas fa-comment text-blue-300 mr-2"></i>
+                                    Pesan
+                                </label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 text-white" placeholder="Masukkan pesan Anda"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-lg shadow-blue-900/30">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <div class="bg-white/10 backdrop-blur-sm h-full rounded-2xl overflow-hidden border border-white/10">
+                        <div class="h-full">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126933.0621261!2d106.7271628!3d-6.229728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%20Pusat%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1628232012345!5m2!1sid!2sid" width="100%" height="100%" style="border:0; min-height: 500px;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-white py-16 relative overflow-hidden">
+        <!-- Decorative Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-blue-400 rounded-md blur-sm opacity-40"></div>
+                            <img src="images/logo.svg" alt="Tekno Ogi Logo" class="relative mr-3 h-12 w-12 rounded-md">
+                        </div>
+                        <span class="text-2xl font-bold text-blue-200">Tekno Ogi</span>
+                    </div>
+                    <p class="text-blue-200 mb-6 text-lg">Platform offline untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan, dan technical meeting tanpa perlu database.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-youtube text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-discord text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-blue-200">
+                        <i class="fas fa-link mr-2"></i>
+                        Menu Utama
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#beranda" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    Beranda
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tentang" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    Tentang Kami
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Page/tools.html" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    Tools
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#kontak" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    Kontak
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    Syarat & Ketentuan
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    Kebijakan Privasi
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    Bantuan
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    FAQ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-12 pt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-blue-300 mb-4 md:mb-0">
+                        <i class="far fa-copyright mr-1"></i> 
+                        2025 Tekno Ogi - Generator Esport. All Rights Reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-blue-300 hover:text-white transition duration-300">Syarat & Ketentuan</a>
+                        <a href="#" class="text-blue-300 hover:text-white transition duration-300">Kebijakan Privasi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a id="back-to-top" href="#" class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <!-- JavaScript Files -->    
+    <script src="js/main.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/error.js"></script>
+</body>
+</html>

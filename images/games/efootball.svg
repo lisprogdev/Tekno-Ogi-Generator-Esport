@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="ef-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50" />
+      <stop offset="100%" stop-color="#8BC34A" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="64" fill="#1B5E20" />
+  <circle cx="256" cy="256" r="160" fill="url(#ef-gradient)" />
+  <circle cx="256" cy="256" r="140" fill="#1B5E20" />
+  <circle cx="256" cy="256" r="120" fill="#388E3C" />
+  <path d="M256 136c-66.27 0-120 53.73-120 120s53.73 120 120 120 120-53.73 120-120-53.73-120-120-120zm0 20c55.23 0 100 44.77 100 100s-44.77 100-100 100-100-44.77-100-100 44.77-100 100-100z" fill="#DCEDC8" />
+  <path d="M256 176c-44.18 0-80 35.82-80 80s35.82 80 80 80 80-35.82 80-80-35.82-80-80-80zm0 20c33.14 0 60 26.86 60 60s-26.86 60-60 60-60-26.86-60-60 26.86-60 60-60z" fill="#8BC34A" />
+  <path d="M256 216c-22.09 0-40 17.91-40 40s17.91 40 40 40 40-17.91 40-40-17.91-40-40-40zm0 20c11.05 0 20 8.95 20 20s-8.95 20-20 20-20-8.95-20-20 8.95-20 20-20z" fill="#DCEDC8" />
+  <path d="M256 136v240M136 256h240" stroke="#DCEDC8" stroke-width="4" />
+  <path d="M196 196l120 120M316 196l-120 120" stroke="#DCEDC8" stroke-width="4" />
+</svg>
