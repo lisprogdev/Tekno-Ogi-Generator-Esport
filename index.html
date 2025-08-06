@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-9789892641077279">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya tanpa perlu database.">
+    <meta name="keywords" content="esport, esports world cup, group generator, random group generator, bracket generator, tournament bracket generator, jadwal generator, mobile legend tournament, free fire tournament, pubg tournament, honor of kings tournament, efootball tournament">
+    <meta name="author" content="Tekno Ogi">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tekno Ogi - Generator Esport | Platform Offline untuk Turnamen Esport">
+    <meta property="og:description" content="Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+    <meta property="og:url" content="https://teknoogi.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tekno Ogi - Generator Esport | Platform Offline untuk Turnamen Esport">
+    <meta name="twitter:description" content="Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://teknoogi.com">
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789892641077279"
      crossorigin="anonymous"></script>
-    <title>Tekno Ogi - Generator Esport</title>
+    <title>Tekno Ogi - Generator Esport | Platform Offline untuk Turnamen Esport</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,6 +43,18 @@
             background-image: linear-gradient(rgba(0, 10, 50, 0.7), rgba(0, 10, 50, 0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, rgba(0, 10, 50, 0.4) 100%);
+            z-index: 1;
         }
         .about-bg {
             background-color: #f1f5f9;
@@ -87,6 +120,28 @@
             transition: all 0.6s ease;
             opacity: 0;
         }
+        
+        /* FAQ Styling */
+        #faq button {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        #faq button.active {
+            color: #3b82f6;
+            background-color: #f0f9ff;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        #faq button + div {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        #faq button.active + div {
+            border-top: 1px solid #e5e7eb;
+        }
         .tool-card:hover::before {
             animation: shimmer 1s ease-in-out;
         }
@@ -124,6 +179,109 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
+        }
+        
+        /* Modern Text Animations */
+        .text-focus-in {
+            animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+        @keyframes text-focus-in {
+            0% { filter: blur(12px); opacity: 0; }
+            100% { filter: blur(0px); opacity: 1; }
+        }
+        
+        .text-shadow-pop {
+            animation: text-shadow-pop 0.6s both;
+        }
+        @keyframes text-shadow-pop {
+            0% { text-shadow: 0 0 0 rgba(0, 0, 0, 0); }
+            100% { text-shadow: 0 0 18px rgba(0, 100, 255, 0.7); }
+        }
+        
+        .tracking-in-expand {
+            animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+        @keyframes tracking-in-expand {
+            0% { letter-spacing: -0.5em; opacity: 0; }
+            40% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+             margin-top: -70px;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            padding-left: 100%;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .feature-badge {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+        }
+        
+        .feature-badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+            transform: rotate(45deg);
+            z-index: -1;
+            transition: all 0.6s ease;
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .carousel-slide {
+            display: flex;
+            width: 400%;
+            animation: carousel 20s infinite;
+        }
+        
+        .carousel-item {
+            width: 25%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+        
+        @keyframes carousel {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 95% { transform: translateX(-75%); }
+            100% { transform: translateX(0); }
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -168,6 +326,10 @@
                         <i class="fas fa-tools mr-2"></i>
                         <span>Tools</span>
                     </a>
+                    <a href="#faq" class="flex items-center hover:text-blue-300 transition duration-300">
+                        <i class="fas fa-question-circle mr-2"></i>
+                        <span>FAQ</span>
+                    </a>
                     <a href="#kontak" class="flex items-center hover:text-blue-300 transition duration-300">
                         <i class="fas fa-envelope mr-2"></i>
                         <span>Kontak</span>
@@ -200,6 +362,10 @@
                     <i class="fas fa-tools mr-2"></i>
                     <span>Tools</span>
                 </a>
+                <a href="#faq" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+                    <i class="fas fa-question-circle mr-2"></i>
+                    <span>FAQ</span>
+                </a>
                 <a href="#kontak" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
                     <i class="fas fa-envelope mr-2"></i>
                     <span>Kontak</span>
@@ -217,22 +383,89 @@
         <!-- Animated Particles -->
         <div class="particles"></div>
         
+        <!-- Marquee Text for SEO Keywords -->
+        <div class="marquee-container bg-blue-900/40 backdrop-blur-sm py-2 absolute w-full z-10 ">
+
+            <div class="marquee-content text-blue-200 text-sm">
+                <span class="mx-4">Mobile Legends Tournament</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Free Fire Tournament</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">PUBG Mobile Tournament</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Honor of Kings Tournament</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">eFootball Tournament</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Group Generator</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Bracket Generator</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Schedule Generator</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Technical Meeting</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Team Management</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Match Reporting</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Certificate Generator</span>
+                <span class="mx-4">•</span>
+                <span class="mx-4">Tournament Poster Generator</span>
+            </div>
+        </div>
+        
         <div class="container mx-auto px-4 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="text-left">
-                    <span class="inline-block bg-blue-600/30 text-blue-300 px-4 py-1 rounded-full text-sm mb-4">
-                        <i class="fas fa-gamepad mr-2"></i>Esport Event Generator
+                    <span class="inline-block bg-blue-600/30 text-blue-300 px-4 py-1 rounded-full text-sm mb-4 mt-10 tracking-in-expand">
+                        <i class="fas fa-gamepad mr-2"></i>Esport Event Generator #1 di Indonesia
                     </span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Tekno Ogi <span class="gradient-text">Generator Esport</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-focus-in">
+                        Tekno Ogi <span class="gradient-text text-shadow-pop">Generator Esport</span> untuk Turnamen Profesional
                     </h1>
-                    <p class="text-lg md:text-xl mb-10 text-blue-100 max-w-2xl">
-                        Platform offline untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan, dan technical meeting tanpa perlu database.
+                    <p class="text-lg md:text-xl mb-6 text-blue-100 max-w-2xl">
+                        Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan, dan technical meeting untuk turnamen <span class="text-blue-300 font-semibold">Mobile Legends</span>, <span class="text-blue-300 font-semibold">Free Fire</span>, <span class="text-blue-300 font-semibold">PUBG Mobile</span>, <span class="text-blue-300 font-semibold">Honor of Kings</span>, dan <span class="text-blue-300 font-semibold">eFootball</span> tanpa perlu database.
                     </p>
+                    <div class="mb-10">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-users-rectangle text-blue-300 mr-2"></i>Group Generator
+                            </span>
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-diagram-project text-blue-300 mr-2"></i>Bracket Generator
+                            </span>
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-calendar-days text-blue-300 mr-2"></i>Schedule Generator
+                            </span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-clipboard-list text-blue-300 mr-2"></i>Technical Meeting
+                            </span>
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-trophy text-blue-300 mr-2"></i>Match Reporting
+                            </span>
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-users-gear text-blue-300 mr-2"></i>Team Management
+                            </span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-certificate text-blue-300 mr-2"></i>Certificate Generator
+                            </span>
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-image text-blue-300 mr-2"></i>Poster Generator
+                            </span>
+                            <span class="feature-badge bg-blue-800/30 px-3 py-2 rounded-md inline-block mb-2 hover:bg-blue-700/50 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-wifi-slash text-blue-300 mr-2"></i>100% Offline
+                            </span>
+                        </div>
+                    </div>
                     <div class="flex flex-wrap gap-4">
-                        <a href="Page/tools.html" class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-blue-900/30">
+                        <a href="Page/tools.html" class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-blue-900/30 pulse-animation">
                             <i class="fas fa-tools mr-2"></i>
-                            Lihat Tools
+                            Lihat Tools Esport
                         </a>
                         <a href="#tentang" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold py-3 px-8 border border-white/30 rounded-lg transition duration-300">
                             <i class="fas fa-info-circle mr-2"></i>
@@ -245,41 +478,30 @@
                         <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
                         <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
                         <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/20 to-transparent rounded-3xl backdrop-blur-sm"></div>
-                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Esport Gaming" class="rounded-3xl shadow-2xl relative z-10 border border-white/10 floating" />
+                        
+                        <!-- Image Carousel -->
+                        <div class="carousel-container rounded-3xl shadow-2xl relative z-10 border border-white/10 overflow-hidden">
+                            <div class="carousel-slide">
+                                <div class="carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Esport Tournament Generator - Mobile Legends Tournament" class="w-full h-full object-cover" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Free Fire Tournament Generator - Esport Bracket" class="w-full h-full object-cover" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="PUBG Mobile Tournament Organizer - Esport Schedule" class="w-full h-full object-cover" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Honor of Kings Tournament - Esport Technical Meeting" class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
                     </div>
                 </div>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
-                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-3xl font-bold text-blue-300 mb-1">
-                        <i class="fas fa-users text-xl mr-2"></i>
-                        Groups
-                    </div>
-                    <div class="text-sm text-blue-100">Buat grup turnamen</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-3xl font-bold text-blue-300 mb-1">
-                        <i class="fas fa-sitemap text-xl mr-2"></i>
-                        Brackets
-                    </div>
-                    <div class="text-sm text-blue-100">Buat bracket turnamen</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-3xl font-bold text-blue-300 mb-1">
-                        <i class="fas fa-calendar-alt text-xl mr-2"></i>
-                        Schedule
-                    </div>
-                    <div class="text-sm text-blue-100">Atur jadwal pertandingan</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-3xl font-bold text-blue-300 mb-1">
-                        <i class="fas fa-clipboard-list text-xl mr-2"></i>
-                        TM
-                    </div>
-                    <div class="text-sm text-blue-100">Technical Meeting</div>
-                </div>
-            </div>
         </div>
         
         <!-- Decorative Elements -->
@@ -290,18 +512,96 @@
         </div>
     </section>
 
-    <!-- Tentang Kami Section -->
-    <section id="tentang" class="about-bg py-20 md:py-28 relative">
-        <div class="container mx-auto px-4 relative z-10">
+    <!-- Features Section -->
+    <section id="fitur" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <span class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm mb-4">
-                    <i class="fas fa-info-circle mr-2"></i>Tentang Platform Kami
+                <span class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm mb-4">
+                    <i class="fas fa-star mr-2"></i>Fitur Terlengkap untuk Turnamen Esport
                 </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-950 mb-4">
-                    Apa itu <span class="text-blue-600">Tekno Ogi</span>?
-                </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mb-8"></div>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Tekno Ogi adalah platform offline untuk mengelola event esport dengan mudah. Semua data tersimpan di perangkat Anda, tanpa perlu koneksi internet atau database.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Generator Esport Terbaik untuk Turnamen</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Tekno Ogi menyediakan berbagai fitur untuk memudahkan pengelolaan turnamen esport Anda, termasuk Mobile Legends, Free Fire, PUBG Mobile, Honor of Kings, dan eFootball</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Feature 1: Group Generator -->
+                <div class="feature-card group hover:shadow-lg">
+                    <div class="hexagon bg-blue-500 group-hover:bg-blue-600 transition-colors duration-300">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6 mb-3">Group Generator</h3>
+                    <p class="text-gray-600">Buat dan atur grup dengan mudah untuk turnamen esport Anda. Mendukung format grup untuk berbagai game seperti Mobile Legends dan Free Fire.</p>
+                    <div class="mt-4 flex justify-center space-x-2">
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Random Group</span>
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Seeded Group</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 2: Bracket Generator -->
+                <div class="feature-card group hover:shadow-lg">
+                    <div class="hexagon bg-blue-500 group-hover:bg-blue-600 transition-colors duration-300">
+                        <i class="fas fa-sitemap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6 mb-3">Bracket Generator</h3>
+                    <p class="text-gray-600">Buat bagan turnamen dengan berbagai format untuk kompetisi esport. Mendukung single elimination, double elimination, dan round robin.</p>
+                    <div class="mt-4 flex justify-center space-x-2">
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Single Elimination</span>
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Double Elimination</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 3: Schedule Generator -->
+                <div class="feature-card group hover:shadow-lg">
+                    <div class="hexagon bg-blue-500 group-hover:bg-blue-600 transition-colors duration-300">
+                        <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6 mb-3">Jadwal Generator</h3>
+                    <p class="text-gray-600">Atur jadwal pertandingan dengan mudah dan efisien untuk turnamen Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.</p>
+                    <div class="mt-4 flex justify-center space-x-2">
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Jadwal Otomatis</span>
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Ekspor PDF</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 4: Technical Meeting -->
+                <div class="feature-card group hover:shadow-lg">
+                    <div class="hexagon bg-blue-500 group-hover:bg-blue-600 transition-colors duration-300">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6 mb-3">Technical Meeting</h3>
+                    <p class="text-gray-600">Kelola technical meeting dengan lebih terstruktur untuk turnamen esport profesional. Ideal untuk penyelenggara turnamen di Indonesia.</p>
+                    <div class="mt-4 flex justify-center space-x-2">
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Presensi Tim</span>
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Aturan Turnamen</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Game Support Section -->
+            <div class="mb-16 text-center">
+                <h3 class="text-2xl font-bold mb-6">Mendukung Berbagai Game Esport Populer</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8">
+                    <div class="game-card p-4 bg-white rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition-shadow">
+                        <img src="images/games/mobile-legends.svg" alt="Mobile Legends Tournament Generator" class="w-16 h-16 mb-2">
+                        <span class="font-medium">Mobile Legends</span>
+                    </div>
+                    <div class="game-card p-4 bg-white rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition-shadow">
+                        <img src="images/games/free-fire.svg" alt="Free Fire Tournament Generator" class="w-16 h-16 mb-2">
+                        <span class="font-medium">Free Fire</span>
+                    </div>
+                    <div class="game-card p-4 bg-white rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition-shadow">
+                        <img src="images/games/pubg-mobile.svg" alt="PUBG Mobile Tournament Generator" class="w-16 h-16 mb-2">
+                        <span class="font-medium">PUBG Mobile</span>
+                    </div>
+                    <div class="game-card p-4 bg-white rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition-shadow">
+                        <img src="images/games/efootball.svg" alt="eFootball Tournament Generator" class="w-16 h-16 mb-2">
+                        <span class="font-medium">eFootball</span>
+                    </div>
+                    <div class="game-card p-4 bg-white rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition-shadow">
+                        <img src="images/games/hearthstone.svg" alt="Honor of Kings Tournament Generator" class="w-16 h-16 mb-2">
+                        <span class="font-medium">Honor of Kings</span>
+                    </div>
+                </div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -415,6 +715,160 @@
     </section>
     
    
+    <!-- Tentang Kami Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm mb-4">
+                    <i class="fas fa-info-circle mr-2"></i>Tentang Platform Kami
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tekno Ogi - Platform Generator Esport Terbaik</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Tekno Ogi adalah platform offline terbaik untuk mengelola turnamen esport dengan mudah. Dirancang khusus untuk penyelenggara turnamen Mobile Legends, Free Fire, PUBG Mobile, Honor of Kings, dan eFootball di Indonesia.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-800 mb-6">Solusi Lengkap untuk Turnamen Esport</h3>
+                    <p class="text-gray-700 mb-6">Tekno Ogi menyediakan berbagai tools yang dibutuhkan untuk menyelenggarakan turnamen esport profesional, mulai dari pembuatan grup, bracket, jadwal pertandingan, hingga technical meeting.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mt-1 mr-4">
+                                <i class="fas fa-check text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Mendukung Berbagai Format Turnamen</h4>
+                                <p class="text-gray-600">Single elimination, double elimination, round robin, dan format grup untuk berbagai jenis game esport.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mt-1 mr-4">
+                                <i class="fas fa-check text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Bekerja 100% Offline</h4>
+                                <p class="text-gray-600">Tidak memerlukan koneksi internet, server, atau database. Ideal untuk lokasi dengan koneksi internet terbatas.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mt-1 mr-4">
+                                <i class="fas fa-check text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Ekspor Hasil dengan Mudah</h4>
+                                <p class="text-gray-600">Ekspor hasil turnamen dalam format PDF, Excel, atau gambar untuk publikasi di media sosial atau website.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="Page/tools.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                            <i class="fas fa-tools mr-2"></i>Lihat Semua Tools
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Turnamen Mobile Legends" class="rounded-xl h-full w-full object-cover" />
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1 transform translate-y-8 shadow-lg floating">
+                        <img src="https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Turnamen Free Fire" class="rounded-xl h-full w-full object-cover" />
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1 transform translate-y-4 shadow-lg floating" style="animation-delay: 1s;">
+                        <img src="https://images.unsplash.com/photo-1603481546579-65d935ba9966?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Turnamen PUBG Mobile" class="rounded-xl h-full w-full object-cover" />
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1 transform -translate-y-4 shadow-lg floating" style="animation-delay: 2s;">
+                        <img src="https://images.unsplash.com/photo-1542751371-6533d4849843?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Turnamen eFootball" class="rounded-xl h-full w-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm mb-4">
+                    <i class="fas fa-question-circle mr-2"></i>Pertanyaan Umum
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pertanyaan yang Sering Ditanyakan</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Temukan jawaban untuk pertanyaan umum tentang platform generator esport kami.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="w-full px-6 py-4 text-left font-bold text-gray-800 hover:text-blue-600 flex justify-between items-center transition duration-300">
+                            <span>Apa itu Tekno Ogi Generator Esport?</span>
+                            <i class="fas fa-chevron-down text-blue-500"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">Tekno Ogi Generator Esport adalah platform offline untuk mengelola turnamen esport dengan mudah. Platform ini menyediakan berbagai tools seperti group generator, bracket generator, schedule generator, dan technical meeting untuk game populer seperti Mobile Legends, Free Fire, PUBG Mobile, Honor of Kings, dan eFootball.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="w-full px-6 py-4 text-left font-bold text-gray-800 hover:text-blue-600 flex justify-between items-center transition duration-300">
+                            <span>Apakah saya memerlukan koneksi internet untuk menggunakan Tekno Ogi?</span>
+                            <i class="fas fa-chevron-down text-blue-500"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">Tidak, Tekno Ogi dirancang untuk bekerja 100% offline. Anda tidak memerlukan koneksi internet, server, atau database untuk menggunakan platform ini. Semua data disimpan secara lokal di perangkat Anda, menjadikannya ideal untuk lokasi dengan koneksi internet terbatas.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="w-full px-6 py-4 text-left font-bold text-gray-800 hover:text-blue-600 flex justify-between items-center transition duration-300">
+                            <span>Game esport apa saja yang didukung oleh Tekno Ogi?</span>
+                            <i class="fas fa-chevron-down text-blue-500"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">Tekno Ogi mendukung berbagai game esport populer termasuk Mobile Legends, Free Fire, PUBG Mobile, Honor of Kings, dan eFootball. Platform ini dirancang untuk memenuhi kebutuhan spesifik dari masing-masing game ini dalam pengaturan turnamen.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="w-full px-6 py-4 text-left font-bold text-gray-800 hover:text-blue-600 flex justify-between items-center transition duration-300">
+                            <span>Format turnamen apa saja yang didukung oleh Bracket Generator?</span>
+                            <i class="fas fa-chevron-down text-blue-500"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">Bracket Generator Tekno Ogi mendukung berbagai format turnamen termasuk single elimination, double elimination, round robin, dan format grup. Anda dapat menyesuaikan bracket sesuai dengan kebutuhan turnamen Anda, baik untuk turnamen kecil maupun besar.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="w-full px-6 py-4 text-left font-bold text-gray-800 hover:text-blue-600 flex justify-between items-center transition duration-300">
+                            <span>Bagaimana cara mengekspor hasil turnamen dari Tekno Ogi?</span>
+                            <i class="fas fa-chevron-down text-blue-500"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">Tekno Ogi memungkinkan Anda untuk mengekspor hasil turnamen dalam berbagai format seperti PDF, Excel, atau gambar. Fitur ini sangat berguna untuk publikasi hasil turnamen di media sosial, website, atau untuk keperluan dokumentasi dan pelaporan.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="w-full px-6 py-4 text-left font-bold text-gray-800 hover:text-blue-600 flex justify-between items-center transition duration-300">
+                            <span>Apakah Tekno Ogi mirip dengan Challonge untuk bracket generator?</span>
+                            <i class="fas fa-chevron-down text-blue-500"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">Ya, Tekno Ogi memiliki fitur bracket generator yang mirip dengan Challonge, tetapi dengan keunggulan bekerja secara offline. Anda dapat membuat dan mengelola bracket turnamen tanpa memerlukan koneksi internet, yang menjadikannya solusi ideal untuk lokasi dengan konektivitas terbatas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Kontak Section -->
     <section id="kontak" class="contact-bg text-white py-20 md:py-28 relative">
         <div class="particles"></div>
@@ -580,6 +1034,12 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="#faq" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2"></i>
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
                                 <a href="#kontak" class="text-blue-200 hover:text-white transition duration-300 flex items-center">
                                     <i class="fas fa-chevron-right text-xs mr-2"></i>
                                     Kontak
@@ -640,5 +1100,90 @@
     <script src="js/ui.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/error.js"></script>
+    
+    <!-- Carousel Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize particles
+            createParticles();
+            
+            // Function to create animated particles
+            function createParticles() {
+                const particlesContainer = document.querySelector('.particles');
+                const particleCount = 50;
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Random size between 2-6px
+                    const size = Math.random() * 4 + 2;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    
+                    // Random position
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.top = `${Math.random() * 100}%`;
+                    
+                    // Random opacity
+                    particle.style.opacity = Math.random() * 0.5 + 0.1;
+                    
+                    // Random animation duration
+                    const duration = Math.random() * 20 + 10;
+                    particle.style.animation = `floating ${duration}s ease-in-out infinite`;
+                    particle.style.animationDelay = `${Math.random() * 5}s`;
+                    
+                    particlesContainer.appendChild(particle);
+                }
+            }
+            
+            // Feature badges hover effect
+            const featureBadges = document.querySelectorAll('.feature-badge');
+            featureBadges.forEach(badge => {
+                badge.addEventListener('mouseenter', function() {
+                    this.classList.add('text-white');
+                });
+                badge.addEventListener('mouseleave', function() {
+                    this.classList.remove('text-white');
+                });
+            });
+        });
+    </script>
+    
+    <!-- FAQ Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all FAQ buttons
+            const faqButtons = document.querySelectorAll('#faq button');
+            
+            // Add click event to each button
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Toggle active class on button
+                    this.classList.toggle('active');
+                    
+                    // Get the content div that follows this button
+                    const content = this.nextElementSibling;
+                    
+                    // Toggle display of content
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.querySelector('i').classList.remove('fa-chevron-up');
+                        this.querySelector('i').classList.add('fa-chevron-down');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        this.querySelector('i').classList.remove('fa-chevron-down');
+                        this.querySelector('i').classList.add('fa-chevron-up');
+                    }
+                });
+            });
+            
+            // Hide all FAQ content initially
+            const faqContents = document.querySelectorAll('#faq button + div');
+            faqContents.forEach(content => {
+                content.style.maxHeight = null;
+            });
+        });
+    </script>
 </body>
 </html>
