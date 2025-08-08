@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-adsense-account" content="ca-pub-9789892641077279" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan, dan desain poster turnamen untuk Mobile Legends, Free Fire, PUBG Mobile, Honor of Kings, dan eFootball tanpa perlu database." />
+    <meta name="keywords" content="Poster Generator, Esports Poster, Tournament Poster, Social Media Poster, Template Poster Esport, Group Generator, Bracket Generator, Schedule Generator, Technical Meeting, tournament tools, esports event promotion" />
+    <meta name="author" content="Tekno Ogi" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Poster Generator - Tekno Ogi Generator Esport" />
+    <meta property="og:description" content="Desain poster turnamen esport profesional untuk promosi event. Berbasis web, tanpa instalasi, siap untuk Mobile Legends, Free Fire, PUBG Mobile, Honor of Kings, dan eFootball." />
+    <meta property="og:image" content="https://tekno-ogi-generatoresporttools.my.id/images/logo.svg" />
+    <meta property="og:url" content="https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Poster-Generator.html" />
+    <meta property="og:site_name" content="Tekno Ogi - Generator Esport" />
+    <meta property="og:type" content="website" />
+
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href="https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Poster-Generator.html" />
+    <link rel="icon" href="../../images/logo.svg" type="image/svg+xml" />
+
+    <!-- CSS & Libs -->
+    <link rel="stylesheet" href="../../css/modern-style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Ads & Analytics -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789892641077279" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HE0LP1SSCR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-HE0LP1SSCR');
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <title>Poster Generator - Tekno Ogi Generator Esport</title>
+
+    <style>
+      /* Essentials copied to match Grup-Generator visual language */
+      body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
+      .hero-tools-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%); position: relative; overflow: hidden; }
+      .hero-tools-bg::before {
+        content: ""; position: absolute; inset: 0;
+        background-image:
+          radial-gradient(circle at 25% 25%, rgba(59,130,246,.1) 0%, transparent 50%),
+          radial-gradient(circle at 75% 75%, rgba(168,85,247,.1) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, rgba(34,197,94,.05) 0%, transparent 50%);
+        animation: pulse-bg 4s ease-in-out infinite;
+      }
+      @keyframes pulse-bg { 0%,100%{opacity:1} 50%{opacity:.85} }
+      /* Selected template visual */
+      .template-card.selected .poster-preview { filter: blur(3px); }
+      .template-card.selected .cancel-select { display: inline-flex; }
+      .template-card .select-overlay { display: none; }
+      .template-card.selected .select-overlay { display: flex; }
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-9789892641077279"></amp-auto-ads>
+
+    <!-- Navigation -->
+    <nav class="bg-blue-950 text-white shadow-xl fixed w-full z-50">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <img src="../../images/logo.svg" alt="Tekno Ogi Logo" class="mr-3 h-10 w-10 rounded-md" />
+            <a href="../../index.html" class="text-xl font-bold text-blue-200">Tekno Ogi - Generator Esport</a>
+          </div>
+          <div class="hidden md:flex items-center space-x-6">
+            <a href="../../index.html#beranda" class="flex items-center hover:text-blue-300 transition duration-300">
+              <i class="fas fa-home mr-2"></i><span>Beranda</span>
+            </a>
+            <a href="../../index.html#tentang" class="flex items-center hover:text-blue-300 transition duration-300">
+              <i class="fas fa-info-circle mr-2"></i><span>Tentang Kami</span>
+            </a>
+            <a href="../tools.html" class="flex items-center hover:text-blue-300 transition duration-300">
+              <i class="fas fa-tools mr-2"></i><span>Tools</span>
+            </a>
+            <a href="../../index.html#faq" class="flex items-center hover:text-blue-300 transition duration-300">
+              <i class="fas fa-question-circle mr-2"></i><span>FAQ</span>
+            </a>
+            <a href="../../index.html#kontak" class="flex items-center hover:text-blue-300 transition duration-300">
+              <i class="fas fa-envelope mr-2"></i><span>Kontak</span>
+            </a>
+            <a href="https://saweria.co/khalisdev" target="_blank" rel="noopener noreferrer" class="flex items-center bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-blue-950 font-bold py-2 px-4 rounded-lg transition duration-300">
+              <i class="fas fa-hand-holding-heart mr-2"></i><span>Donate</span>
+            </a>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-button" type="button" class="text-white hover:text-blue-300 focus:outline-none">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden mt-4 pb-2">
+          <a href="../../index.html#beranda" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+            <i class="fas fa-home mr-2"></i><span>Beranda</span>
+          </a>
+          <a href="../../index.html#tentang" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+            <i class="fas fa-info-circle mr-2"></i><span>Tentang Kami</span>
+          </a>
+          <a href="../tools.html" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+            <i class="fas fa-tools mr-2"></i><span>Tools</span>
+          </a>
+          <a href="../../index.html#faq" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+            <i class="fas fa-question-circle mr-2"></i><span>FAQ</span>
+          </a>
+          <a href="../../index.html#kontak" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+            <i class="fas fa-envelope mr-2"></i><span>Kontak</span>
+          </a>
+          <a href="https://saweria.co/khalisdev" target="_blank" rel="noopener noreferrer" class="block py-2 px-4 mt-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-blue-950 font-bold rounded-lg">
+            <i class="fas fa-hand-holding-heart mr-2"></i><span>Donate</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main: Only Hero Section for now -->
+    <main class="pt-24 pb-2">
+      <div class="container mx-auto px-4">
+        <section id="poster" class="hero-tools-bg rounded-xl p-8 mb-4 text-white relative overflow-hidden">
+          <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Poster Generator</h1>
+            <p class="text-xl text-blue-200 mb-6 max-w-3xl">
+              Desain poster turnamen esport profesional untuk promosi event di media sosial. Berbasis web, tanpa instalasi, siap untuk <strong>Mobile Legends</strong>, <strong>Free Fire</strong>, <strong>PUBG Mobile</strong>, <strong>Honor of Kings</strong>, dan <strong>eFootball</strong>.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="bg-blue-800/30 backdrop-blur-sm px-4 py-3 rounded-lg flex items-center">
+                <i class="fas fa-bolt text-yellow-400 mr-3"></i>
+                <span>Tanpa Database</span>
+              </div>
+              <div class="bg-blue-800/30 backdrop-blur-sm px-4 py-3 rounded-lg flex items-center">
+                <i class="fas fa-file-image text-green-400 mr-3"></i>
+                <span>Export PNG/JPG</span>
+              </div>
+              <div class="bg-blue-800/30 backdrop-blur-sm px-4 py-3 rounded-lg flex items-center">
+                <i class="fas fa-palette text-purple-400 mr-3"></i>
+                <span>Template Siap Pakai</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Feature 1: Template Siap Pakai -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="h-2 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+              <div class="p-6">
+                <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-layer-group text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-3">Template Siap Pakai</h3>
+                <p class="text-gray-600">Pilih ratusan template <strong>poster turnamen esport</strong> siap pakai untuk promosi di Instagram, Facebook, dan TikTok.</p>
+              </div>
+            </div>
+
+            <!-- Feature 2: Editor Berbasis Formulir -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="h-2 bg-gradient-to-r from-purple-500 to-purple-700"></div>
+              <div class="p-6">
+                <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-pen-to-square text-purple-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-3">Editor Berbasis Formulir</h3>
+                <p class="text-gray-600">Masukkan data turnamen, teks, dan unggah logo melalui <strong>form input</strong> yang sederhana dan cepat.</p>
+              </div>
+            </div>
+
+            <!-- Feature 3: Ekspor Multi-Format -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="h-2 bg-gradient-to-r from-green-500 to-green-700"></div>
+              <div class="p-6">
+                <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-file-image text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-3">Ekspor PNG/JPG/PDF</h3>
+                <p class="text-gray-600">Simpan desain <strong>poster esports</strong> berkualitas tinggi dalam format PNG, JPG, atau PDF siap cetak.</p>
+              </div>
+            </div>
+
+            <!-- Feature 4: Branding & Warna Kustom -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="h-2 bg-gradient-to-r from-yellow-500 to-yellow-700"></div>
+              <div class="p-6">
+                <div class="w-14 h-14 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-brush text-yellow-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-3">Branding & Warna Kustom</h3>
+                <p class="text-gray-600">Sesuaikan warna tim, font, dan logo agar <strong>Poster Generator</strong> sesuai identitas brand turnamen Anda.</p>
+              </div>
+            </div>
+
+            <!-- Feature 5: Ukuran & Resolusi Sosial Media -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="h-2 bg-gradient-to-r from-red-500 to-red-700"></div>
+              <div class="p-6">
+                <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-mobile-screen text-red-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-3">Ukuran & Resolusi Media Sosial</h3>
+                <p class="text-gray-600">Optimalkan untuk 1:1, 4:5, 16:9, dan Story. Ideal untuk <strong>Mobile Legends</strong>, <strong>Free Fire</strong>, <strong>PUBG Mobile</strong>, <strong>HOK</strong>, dan <strong>eFootball</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Feature 6: Berbasis Web, Tanpa Instalasi -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="h-2 bg-gradient-to-r from-indigo-500 to-indigo-700"></div>
+              <div class="p-6">
+                <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-globe text-indigo-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-3">Berbasis Web, Tanpa Instalasi</h3>
+                <p class="text-gray-600">Gunakan langsung di browser tanpa instalasi. Koneksi internet diperlukan selama penggunaan.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <!-- Template Tabs Section -->
+    <section class="py-3">
+      <div class="container mx-auto px-4">
+        <div class="bg-white rounded-3xl shadow-lg p-5 md:p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Template Poster Turnamen</h2>
+            <span class="text-sm px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-semibold">1 Template</span>
+          </div>
+
+          <!-- Tabs -->
+          <div class="flex flex-wrap gap-2 mb-4" role="tablist">
+            <button data-tab="tab-ml" class="tab-btn px-4 py-2 rounded-full border text-sm md:text-base bg-gray-50 hover:bg-gray-100 text-gray-700 border-gray-200 flex items-center gap-2">
+              <img src="https://placehold.co/24x24/png?text=ML" alt="Mobile Legends" class="w-6 h-6 rounded">
+              Mobile Legends
+            </button>
+            <button data-tab="tab-ff" class="tab-btn active px-4 py-2 rounded-full border text-sm md:text-base bg-blue-600 text-white border-blue-600 flex items-center gap-2">
+              <img src="https://placehold.co/24x24/png?text=FF" alt="Free Fire" class="w-6 h-6 rounded">
+              Free Fire
+            </button>
+            <button data-tab="tab-pubg" class="tab-btn px-4 py-2 rounded-full border text-sm md:text-base bg-gray-50 hover:bg-gray-100 text-gray-700 border-gray-200 flex items-center gap-2">
+              <img src="https://placehold.co/24x24/png?text=PM" alt="PUBG Mobile" class="w-6 h-6 rounded">
+              PUBG Mobile
+            </button>
+            <button data-tab="tab-hok" class="tab-btn px-4 py-2 rounded-full border text-sm md:text-base bg-gray-50 hover:bg-gray-100 text-gray-700 border-gray-200 flex items-center gap-2">
+              <img src="https://placehold.co/24x24/png?text=HK" alt="Honor of Kings" class="w-6 h-6 rounded">
+              Honor of Kings
+            </button>
+            <button data-tab="tab-efootball" class="tab-btn px-4 py-2 rounded-full border text-sm md:text-base bg-gray-50 hover:bg-gray-100 text-gray-700 border-gray-200 flex items-center gap-2">
+              <img src="https://placehold.co/24x24/png?text=EF" alt="eFootball" class="w-6 h-6 rounded">
+              eFootball
+            </button>
+          </div>
+
+          <!-- Panels -->
+          <div class="tab-panel hidden" id="tab-ml" role="tabpanel">
+            <div class="p-6 border border-dashed border-gray-200 rounded-2xl text-center text-gray-600">
+              Template belum tersedia untuk Mobile Legends.
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-ff" role="tabpanel">
+            <!-- Grid 3 templates (only first is available) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+              <!-- Template 1 (Enabled) -->
+              <div class="template-card cursor-pointer rounded-2xl overflow-hidden border border-gray-100 shadow-md transition focus:outline-none" data-template-id="ff-1" data-enabled="true" tabindex="0">
+                <div class="bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-400 text-white px-6 py-4 flex items-center justify-between relative">
+                  <div class="flex items-center gap-3">
+                    <i class="fas fa-fire text-2xl"></i>
+                    <span class="text-lg font-bold">Free Fire Tournament</span>
+                  </div>
+                  <span class="text-xs bg-white/20 px-3 py-1 rounded-full">Poster Template</span>
+                  <button type="button" class="cancel-select hidden absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 text-slate-700 hover:bg-white shadow flex items-center justify-center" title="Batal pilih" aria-label="Batal pilih">
+                    <i class="fas fa-times text-sm"></i>
+                  </button>
+                </div>
+                <div class="relative bg-slate-900">
+                  <div class="w-full poster-preview" style="aspect-ratio: 4/5;">
+                    <div class="w-full h-full p-6 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+                      <div class="h-full w-full rounded-xl p-4 border border-white/10 relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_20%,#ffffff_0%,transparent_30%),radial-gradient(circle_at_80%_80%,#ffffff_0%,transparent_30%)]"></div>
+
+                        <!-- Selection overlay shown when template is selected -->
+                        <div class="select-overlay absolute inset-0 z-20 items-center justify-center">
+                        </div>
+                        <div class="relative z-10 h-full flex flex-col justify-between">
+                          <div>
+                            <div class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 border border-amber-400/30 px-3 py-1 rounded-full text-xs font-semibold">Official Tournament</div>
+                            <h3 class="mt-3 text-3xl md:text-4xl font-extrabold text-white leading-tight">FF City Cup 2025</h3>
+                            <p class="text-slate-300 mt-2">Presented by Tekno Ogi - Generator Esport</p>
+                          </div>
+                          <div class="grid grid-cols-2 gap-3 text-sm">
+                            <div class="bg-white/5 rounded-lg p-3 border border-white/10">
+                              <div class="text-slate-400">Tanggal</div>
+                              <div class="text-white font-semibold">12 - 14 Juli 2025</div>
+                            </div>
+                            <div class="bg-white/5 rounded-lg p-3 border border-white/10">
+                              <div class="text-slate-400">Lokasi</div>
+                              <div class="text-white font-semibold">Barru, Sulawesi Selatan</div>
+                            </div>
+                            <div class="bg-white/5 rounded-lg p-3 border border-white/10">
+                              <div class="text-slate-400">Format</div>
+                              <div class="text-white font-semibold">Group Stage + Final</div>
+                            </div>
+                            <div class="bg-white/5 rounded-lg p-3 border border-white/10">
+                              <div class="text-slate-400">Hadiah</div>
+                              <div class="text-white font-semibold">Total 10.000.000</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center justify-between">
+                            <div class="text-slate-300 text-xs">Contact: @teknoogi | tekno-ogi-generatoresporttools.my.id</div>
+                            <div class="inline-flex items-center gap-2 text-amber-300 text-xs"><i class="fas fa-hashtag"></i><span>FreeFire</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Template 2 (Coming Soon) -->
+              <div class="template-card rounded-2xl overflow-hidden border border-dashed border-gray-200 shadow-sm opacity-60 grayscale pointer-events-none select-none">
+                <div class="bg-gradient-to-r from-gray-100 to-gray-50 text-gray-500 px-6 py-4 flex items-center justify-between">
+                  <span class="text-lg font-semibold">Segera Hadir</span>
+                  <span class="text-xs bg-gray-200 px-3 py-1 rounded-full">Poster Template</span>
+                </div>
+                <div class="w-full bg-gray-100" style="aspect-ratio: 4/5;"></div>
+              </div>
+
+              <!-- Template 3 (Coming Soon) -->
+              <div class="template-card rounded-2xl overflow-hidden border border-dashed border-gray-200 shadow-sm opacity-60 grayscale pointer-events-none select-none">
+                <div class="bg-gradient-to-r from-gray-100 to-gray-50 text-gray-500 px-6 py-4 flex items-center justify-between">
+                  <span class="text-lg font-semibold">Segera Hadir</span>
+                  <span class="text-xs bg-gray-200 px-3 py-1 rounded-full">Poster Template</span>
+                </div>
+                <div class="w-full bg-gray-100" style="aspect-ratio: 4/5;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel hidden" id="tab-pubg" role="tabpanel">
+            <div class="p-6 border border-dashed border-gray-200 rounded-2xl text-center text-gray-600">
+              Template belum tersedia untuk PUBG Mobile.
+            </div>
+          </div>
+          <div class="tab-panel hidden" id="tab-hok" role="tabpanel">
+            <div class="p-6 border border-dashed border-gray-200 rounded-2xl text-center text-gray-600">
+              Template belum tersedia untuk Honor of Kings.
+            </div>
+          </div>
+          <div class="tab-panel hidden" id="tab-efootball" role="tabpanel">
+            <div class="p-6 border border-dashed border-gray-200 rounded-2xl text-center text-gray-600">
+              Template belum tersedia untuk eFootball.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Tabs handler (scoped to this page)
+      document.addEventListener('DOMContentLoaded', function () {
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const panels = document.querySelectorAll('.tab-panel');
+        const templateCards = document.querySelectorAll('.template-card[data-enabled="true"]');
+
+        function activateTab(targetId) {
+          panels.forEach(p => p.classList.add('hidden'));
+          const panel = document.getElementById(targetId);
+          if (panel) panel.classList.remove('hidden');
+
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabButtons.forEach(btn => {
+            if (btn.getAttribute('data-tab') === targetId) {
+              btn.classList.add('active');
+              btn.classList.remove('bg-gray-50','text-gray-700','border-gray-200');
+              btn.classList.add('bg-blue-600','text-white','border-blue-600');
+            } else {
+              btn.classList.remove('bg-blue-600','text-white','border-blue-600');
+              btn.classList.add('bg-gray-50','text-gray-700','border-gray-200');
+            }
+          });
+        }
+
+        tabButtons.forEach(btn => {
+          btn.addEventListener('click', () => activateTab(btn.getAttribute('data-tab')));
+        });
+
+        // Ensure default active is Free Fire
+        activateTab('tab-ff');
+
+        // Template selection
+        function clearTemplateSelection() {
+          document.querySelectorAll('.template-card').forEach(card => {
+            card.classList.remove('ring-2','ring-blue-500','ring-offset-2','selected');
+          });
+        }
+
+        templateCards.forEach(card => {
+          const select = () => {
+            clearTemplateSelection();
+            card.classList.add('ring-2','ring-blue-500','ring-offset-2','selected');
+          };
+
+          card.addEventListener('click', select);
+          card.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              select();
+            }
+          });
+
+          const cancelBtn = card.querySelector('.cancel-select');
+          if (cancelBtn) {
+            cancelBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              card.classList.remove('ring-2','ring-blue-500','ring-offset-2','selected');
+            });
+          }
+        });
+      });
+    </script>
+
+    <!-- Back to Top -->
+    <a id="back-to-top" href="#" class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 invisible transition-all duration-300">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Core Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/error.js"></script>
+  </body>
+</html>
+
+

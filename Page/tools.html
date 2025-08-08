@@ -4,15 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-adsense-account" content="ca-pub-9789892641077279">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya tanpa perlu database." />
+    <meta name="keywords" content="Group Generator, Bracket Generator, Schedule Generator, Technical Meeting, Match Reporting, Team Management, Certificate Generator, Poster Generator, tournament tools, esports group creation, tournament scheduling, esports team management, online match reporting, digital certificate creation, esports poster design, event organization tools, competition bracket, gaming tournament management, esports event planning" />
+    <meta name="author" content="Tekno Ogi" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tekno Ogi - Generator Esport | Tools Esport Offline" />
+    <meta property="og:description" content="Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya." />
+    <meta property="og:image" content="https://tekno-ogi-generatoresporttools.my.id/images/logo.svg" />
+    <meta property="og:url" content="https://tekno-ogi-generatoresporttools.my.id/Page/tools.html" />
+    <meta property="og:site_name" content="Tekno Ogi - Generator Esport" />
+    <meta property="og:type" content="website" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tekno-ogi-generatoresporttools.my.id/Page/tools.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/logo.svg" type="image/x-icon" />
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../css/index.css" />
+
+    <!-- Tailwind & Ads -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789892641077279"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789892641077279" crossorigin="anonymous"></script>
+
     <!-- Font Awesome CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <title>Tools - Tekno Ogi Generator Esport</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Page Title -->
+    <title>Tekno Ogi - Generator Esport | Tools Esport Offline</title>
+
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.min.css" />
     <style>
       /* Keeping all original styles except status badge related styles */
       /* Keeping all original styles except status badge related styles */
@@ -244,6 +270,9 @@
       .tool-card:hover .glow-effect {
         box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
       }
+      .neon-glow {
+        box-shadow: 0 10px 40px rgba(59, 130, 246, 0.35), 0 2px 10px rgba(99, 102, 241, 0.25);
+      }
     </style>
       <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HE0LP1SSCR"></script>
@@ -383,18 +412,13 @@
               class="ml-3 w-2 h-2 bg-green-400 rounded-full animate-pulse"
             ></div>
           </div>
-          <h1
-            class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-          >
-            Tools
-            <span
-              class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-              >Profesional</span
-            >
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Tools Esport
+            <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Profesional</span>
           </h1>
           <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-            Koleksi lengkap tools untuk mengelola turnamen esport Anda dengan
-            mudah dan profesional
+            Koleksi lengkap tools untuk mengelola turnamen esport secara offline tanpa database.
+            Gunakan <strong>Group Generator</strong>, <strong>Bracket Generator</strong>, <strong>Schedule Generator</strong>, dan <strong>Technical Meeting</strong> untuk turnamen <strong>Mobile Legends</strong>, <strong>Free Fire</strong>, <strong>PUBG Mobile</strong>, <strong>Honor of Kings</strong>, dan <strong>eFootball</strong>.
           </p>
           <div class="flex flex-wrap justify-center gap-4 mb-12">
             <div
@@ -433,6 +457,23 @@
             style="stroke: none; fill: #f1f5f9"
           ></path>
         </svg>
+      </div>
+    </section>
+    <!-- Calendar & Clock Section (Combined Container) -->
+    <section id="calendar-time" class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+          <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-6 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-calendar-days text-2xl"></i>
+              <h3 class="text-xl font-semibold">Kalender Turnamen & Jam Digital</h3>
+            </div>
+            <div id="clock-combined" class="mt-3 md:mt-0 text-3xl md:text-4xl font-bold tabular-nums tracking-wide">00:00:00 — Senin, 1 Januari 2025</div>
+          </div>
+          <div class="p-4">
+            <div id="calendar"></div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Tools Section -->
@@ -495,8 +536,7 @@
             </div>
             <h3 class="text-2xl font-bold mb-3">Pembuat Turnamen</h3>
             <p class="text-blue-100 mb-6 text-lg">
-              Tool lengkap untuk membuat turnamen dari awal hingga akhir. Kelola
-              peserta, bracket, jadwal, dan hasil dalam satu platform.
+              Tool lengkap untuk membuat turnamen esport dari awal hingga akhir. Kelola peserta, bracket, jadwal, dan hasil dalam satu platform offline.
             </p>
             <div class="flex flex-wrap gap-2 mb-6">
               <span class="bg-white/20 px-3 py-1 rounded-full text-sm"
@@ -579,8 +619,7 @@
               Pembuat Bagan
             </h3>
             <p class="text-gray-600 text-center mb-6">
-              Generate bracket single/double elimination dengan visualisasi yang
-              menarik.
+              Buat bracket single/double elimination dengan visualisasi menarik untuk turnamen esport seperti Mobile Legends, Free Fire, dan PUBG Mobile.
             </p>
             <div class="space-y-2 mb-6">
               <div class="flex items-center text-sm text-gray-500">
@@ -621,7 +660,7 @@
               Pembuat Jadwal
             </h3>
             <p class="text-gray-600 text-center mb-6">
-              Atur jadwal pertandingan dengan manajemen waktu yang efisien.
+              Atur jadwal pertandingan dengan manajemen waktu efisien. Cocok untuk turnamen Mobile Legends, Free Fire, dan eFootball.
             </p>
             <div class="space-y-2 mb-6">
               <div class="flex items-center text-sm text-gray-500">
@@ -662,7 +701,7 @@
               Technical Meeting
             </h3>
             <p class="text-gray-600 text-center mb-6">
-              Buat agenda dan dokumentasi technical meeting yang profesional.
+              Buat agenda dan dokumentasi technical meeting yang profesional untuk penyelenggaraan turnamen esport.
             </p>
             <div class="space-y-2 mb-6">
               <div class="flex items-center text-sm text-gray-500">
@@ -703,7 +742,7 @@
               Pelapor Pertandingan
             </h3>
             <p class="text-gray-600 text-center mb-6">
-              Catat hasil pertandingan dan generate laporan turnamen otomatis.
+              Catat hasil pertandingan dan buat laporan turnamen otomatis untuk kebutuhan publikasi dan evaluasi.
             </p>
             <div class="space-y-2 mb-6">
               <div class="flex items-center text-sm text-gray-500">
@@ -744,7 +783,7 @@
               Pembuat Sertifikat
             </h3>
             <p class="text-gray-600 text-center mb-6">
-              Buat sertifikat pemenang dan peserta dengan template yang menarik.
+              Buat sertifikat pemenang dan peserta dengan template menarik untuk turnamen esport profesional.
             </p>
             <div class="space-y-2 mb-6">
               <div class="flex items-center text-sm text-gray-500">
@@ -785,7 +824,7 @@
               Pengelola Tim
             </h3>
             <p class="text-gray-600 text-center mb-6">
-              Kelola data tim, pemain, dan informasi registrasi dengan mudah.
+              Kelola data tim, pemain, dan informasi registrasi dengan mudah untuk berbagai cabang esport.
             </p>
             <div class="space-y-2 mb-6">
               <div class="flex items-center text-sm text-gray-500">
@@ -826,7 +865,7 @@
               Overlay Siaran
             </h3>
             <p class="text-gray-600 text-center mb-6">
-              Buat overlay streaming yang menarik untuk broadcast turnamen Anda.
+              Buat overlay streaming yang menarik untuk siaran turnamen esport di platform favorit Anda.
             </p>
             <div class="space-y-2 mb-6">
               <div class="flex items-center text-sm text-gray-500">
@@ -915,9 +954,7 @@
               <span class="text-2xl font-bold text-blue-200">Tekno Ogi</span>
             </div>
             <p class="text-blue-200 mb-6 text-lg">
-              Platform offline untuk mengelola event esport dengan mudah. Buat
-              grup, bagan, jadwal pertandingan, dan pertemuan teknis tanpa perlu
-              database.
+              Platform offline untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan, dan technical meeting tanpa perlu database.
             </p>
             <div class="flex space-x-4">
               <a
@@ -961,7 +998,7 @@
               <ul class="space-y-4">
                 <li>
                   <a
-                    href="index.html#beranda"
+                    href="../index.html#beranda"
                     class="text-blue-200 hover:text-white transition duration-300 flex items-center"
                   >
                     <i class="fas fa-chevron-right text-xs mr-2"></i>
@@ -970,7 +1007,7 @@
                 </li>
                 <li>
                   <a
-                    href="index.html#tentang"
+                    href="../index.html#tentang"
                     class="text-blue-200 hover:text-white transition duration-300 flex items-center"
                   >
                     <i class="fas fa-chevron-right text-xs mr-2"></i>
@@ -1068,6 +1105,59 @@
       <i class="fas fa-arrow-up"></i>
     </a>
     <!-- Core JavaScript Files -->
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/locales-all.global.min.js"></script>
+    <!-- Calendar & Clock Init -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Digital clock
+        const combinedEl = document.getElementById('clock-combined');
+
+        function updateClock() {
+          const now = new Date();
+          const timeStr = now.toLocaleTimeString('id-ID', {
+            hour12: false,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+          });
+          const dateStr = now.toLocaleDateString('id-ID', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          });
+          combinedEl.textContent = `${timeStr} — ${dateStr}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // FullCalendar
+        const calendarEl = document.getElementById('calendar');
+        if (calendarEl && window.FullCalendar) {
+          const calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            initialDate: new Date(),
+            headerToolbar: {
+              left: 'prev,next today',
+              center: 'title',
+              right: '',
+            },
+            firstDay: 1,
+            nowIndicator: true,
+            locale: 'id',
+            height: 'auto',
+            buttonText: { today: 'Hari ini', month: 'Bulan' },
+            selectable: false,
+            dayMaxEventRows: true,
+          });
+          calendar.render();
+          // Ensure it highlights and centers around today when loaded
+          calendar.today();
+        }
+      });
+    </script>
     <script src="../js/main.js"></script>
     <script src="../js/ui.js"></script>
     <script src="../js/storage.js"></script>
