@@ -463,15 +463,13 @@ function displayResults(tournamentName, groups) {
         teamList.dataset.groupIndex = groupIndex;
         
         // Add teams to the list
-        group.forEach((team, teamIndex) => {
+        group.forEach((team) => {
             const teamItem = document.createElement('li');
             teamItem.className = 'team-item';
-            teamItem.dataset.teamIndex = teamIndex;
-            
+            // No team number
             // Team name with seeded indicator if applicable
             const teamName = document.createElement('div');
             teamName.className = 'flex items-center';
-            
             if (team.seeded) {
                 teamName.innerHTML = `
                     <span class="seeded-indicator">
@@ -481,18 +479,13 @@ function displayResults(tournamentName, groups) {
                 `;
             } else {
                 teamName.innerHTML = `
-                    <span class="team-number">
-                        ${teamIndex + 1}
-                    </span>
                     <span>${team.name}</span>
                 `;
             }
-            
             // Drag handle
             const dragHandle = document.createElement('div');
             dragHandle.className = 'drag-handle';
             dragHandle.innerHTML = '<i class="fas fa-grip-lines"></i>';
-            
             teamItem.appendChild(teamName);
             teamItem.appendChild(dragHandle);
             teamList.appendChild(teamItem);
@@ -701,9 +694,9 @@ function printGroups() {
                 <ul class="team-list">
         `;
         
-        group.forEach((team, teamIndex) => {
+        group.forEach((team) => {
             printContent += `
-                <li class="team-item ${team.seeded ? 'seeded' : ''}">${teamIndex + 1}. ${team.name}</li>
+                <li class="team-item ${team.seeded ? 'seeded' : ''}">${team.name}</li>
             `;
         });
         
