@@ -111,6 +111,84 @@
   <amp-auto-ads type="adsense" data-ad-client="ca-pub-9789892641077279">
   </amp-auto-ads>
 
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-950 text-white shadow-xl fixed w-full z-50">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <!-- Logo and Website Name -->
+        <div class="flex items-center">
+          <img src="../../images/logo.svg" alt="Tekno Ogi Logo" class="mr-3 h-10 w-10 rounded-md" />
+          <a href="../../index.html" class="text-xl font-bold text-blue-200">Tekno Ogi - Generator Esport</a>
+        </div>
+
+        <!-- Navigation Links - Desktop -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="../../index.html#beranda" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-home mr-2"></i>
+            <span>Beranda</span>
+          </a>
+          <a href="../../index.html#tentang" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-info-circle mr-2"></i>
+            <span>Tentang Kami</span>
+          </a>
+          <a href="../tools.html" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-tools mr-2"></i>
+            <span>Tools</span>
+          </a>
+          <a href="../../index.html#faq" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-question-circle mr-2"></i>
+            <span>FAQ</span>
+          </a>
+          <a href="../../index.html#kontak" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-envelope mr-2"></i>
+            <span>Kontak</span>
+          </a>
+          <a href="https://saweria.co/khalisdev" target="_blank" rel="noopener noreferrer"
+            class="flex items-center bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-blue-950 font-bold py-2 px-4 rounded-lg transition duration-300">
+            <i class="fas fa-hand-holding-heart mr-2"></i>
+            <span>Donate</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" type="button" class="text-white hover:text-blue-300 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="mobile-menu hidden md:hidden mt-4 pb-2">
+        <a href="../../index.html#beranda" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-home mr-2"></i>
+          <span>Beranda</span>
+        </a>
+        <a href="../../index.html#tentang" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-info-circle mr-2"></i>
+          <span>Tentang Kami</span>
+        </a>
+        <a href="../tools.html" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-tools mr-2"></i>
+          <span>Tools</span>
+        </a>
+        <a href="../../index.html#faq" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-question-circle mr-2"></i>
+          <span>FAQ</span>
+        </a>
+        <a href="../../index.html#kontak" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-envelope mr-2"></i>
+          <span>Kontak</span>
+        </a>
+        <a href="https://saweria.co/khalisdev" target="_blank" rel="noopener noreferrer"
+          class="block py-2 px-4 mt-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-blue-950 font-bold rounded-lg">
+          <i class="fas fa-hand-holding-heart mr-2"></i>
+          <span>Donate</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Google AdSense Display Ad -->
   <div class="ad-container bg-white shadow-md mx-auto max-w-4xl my-8 rounded-lg overflow-hidden" style="margin-top: 120px;">
     <div class="text-center py-3 bg-gradient-to-r from-blue-600 to-blue-800">
@@ -355,6 +433,20 @@
   <script src="../../js/storage.js"></script>
   <script src="../../js/error.js"></script>
   <script src="../../js/jadwal-generator.js"></script>
+
+  <script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
