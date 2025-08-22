@@ -1,488 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
-<head></head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="google-adsense-account" content="ca-pub-9789892641077279" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-adsense-account" content="ca-pub-9789892641077279" />
 
-<!-- SEO Meta Tags -->
-<meta name="description"
-  content="Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya tanpa perlu database." />
-<meta name="keywords"
-  content="Group Generator, Bracket Generator, Schedule Generator, Technical Meeting, Match Reporting, Team Management, Certificate Generator, Poster Generator, tournament tools, esports group creation, tournament scheduling, esports team management, online match reporting, digital certificate creation, esports poster design, event organization tools, competition bracket, gaming tournament management, esports event planning" />
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Generator Esport terbaik untuk turnamen game. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya. Platform offline tanpa database." />
+  <meta name="keywords"
+    content="esport generator, generator esport, tournament generator, esports tools, group generator, bracket generator, schedule generator, technical meeting, match reporting, team management, certificate generator, poster generator, tournament tools, esports group creation, tournament scheduling, esports team management, online match reporting, digital certificate creation, esports poster design, event organization tools, competition bracket, gaming tournament management, esports event planning, mobile legends tournament, free fire tournament, pubg mobile tournament" />
 
-<!-- Author Meta Tag -->
-<meta name="author" content="Tekno Ogi" />
+  <!-- Author Meta Tag -->
+  <meta name="author" content="Tekno Ogi" />
 
-<!-- Open Graph Meta Tags (for social media sharing) -->
-<meta property="og:title" content="Tekno Ogi - Generator Esport | Platform Offline untuk Turnamen Esport" />
-<meta property="og:description"
-  content="Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya." />
-<meta property="og:image" content="https://tekno-ogi-generatoresporttools.my.id/images/logo.svg" />
-<meta property="og:url" content="https://tekno-ogi-generatoresporttools.my.id/" />
-<meta property="og:site_name" content="Tekno Ogi - Generator Esport" />
-<meta property="og:type" content="website" />
+  <!-- Open Graph Meta Tags (for social media sharing) -->
+  <meta property="og:title" content="Generator Esport - Tekno Ogi | Platform Turnamen Game Terbaik" />
+  <meta property="og:description"
+    content="Generator Esport terbaik untuk turnamen game. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya." />
+  <meta property="og:image" content="https://tekno-ogi-generatoresporttools.my.id/images/logo.svg" />
+  <meta property="og:url" content="https://tekno-ogi-generatoresporttools.my.id/" />
+  <meta property="og:site_name" content="Generator Esport - Tekno Ogi" />
+  <meta property="og:type" content="website" />
 
-<!-- Canonical URL (to avoid duplicate content issues) -->
-<link rel="canonical" href="https://tekno-ogi-generatoresporttools.my.id/" />
+  <!-- Canonical URL (to avoid duplicate content issues) -->
+  <link rel="canonical" href="https://tekno-ogi-generatoresporttools.my.id/" />
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="Generator Esport - Tekno Ogi RSS Feed" href="./feed.xml" />
 
-<!-- Favicon -->
-<link rel="icon" href="./images/logo.svg" type="image/x-icon" />
+  <!-- Favicon -->
+  <link rel="icon" href="./images/logo.svg" type="image/x-icon" />
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="./manifest.json" />
+  
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="./images/logo.svg" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1e40af" />
+  
+  <!-- Mobile App Capable -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Generator Esport" />
 
-<!-- External Stylesheet for the website -->
-<link rel="stylesheet" href="./css/index.css" />
+  <!-- External Stylesheet for the website -->
+  <link rel="stylesheet" href="./css/index.css" />
 
-<!-- External JavaScript for Tailwind CSS (browser support) -->
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- External JavaScript for Tailwind CSS (browser support) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-<!-- Font Awesome CDN (for icons) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Font Awesome CDN (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- Page Title -->
+  <title>
+    Generator Esport - Tekno Ogi | Platform Turnamen Game Terbaik
+  </title>
 
-
-<!-- Page Title -->
-<title>
-  Tekno Ogi - Generator Esport | Platform Offline untuk Turnamen Esport
-</title>
-
-<!-- Google Analytics Script (for tracking website performance) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HE0LP1SSCR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", "G-HE0LP1SSCR");
-</script>
-
-<!-- AMP Auto Ads (for faster loading and ad placement on AMP pages) -->
-<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-<style>
-  body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-  }
-
-  .hero-bg {
-    background-image: linear-gradient(rgba(0, 10, 50, 0.7),
-        rgba(0, 10, 50, 0.7)),
-      url("https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle,
-        transparent 20%,
-        rgba(0, 10, 50, 0.4) 100%);
-    z-index: 1;
-  }
-
-  .about-bg {
-    background-color: #f1f5f9;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .about-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234338ca' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
-    z-index: 0;
-  }
-
-  .contact-bg {
-    background-image: linear-gradient(rgba(0, 10, 50, 0.8),
-        rgba(0, 10, 50, 0.8)),
-      url("https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-    background-size: cover;
-    background-position: center;
-  }
-
-  .nav-active {
-    color: #93c5fd;
-  }
-
-  .mobile-menu {
-    transition: all 0.3s ease-in-out;
-  }
-
-  .feature-card {
-    transform: translateY(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px);
-  }
-
-  .gradient-text {
-    background: linear-gradient(45deg, #60a5fa, #93c5fd);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .rounded-square {
-    width: 100px;
-    height: 100px;
-    border-radius: 1.25rem;
-    /* rounded-xl */
-    overflow: hidden;
-    background: #3b82f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s;
-  }
-
-  .group:hover .rounded-square {
-    background: #2563eb;
-  }
-
-  .tool-card {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .tool-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .tool-card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent);
-    transform: rotate(45deg);
-    transition: all 0.6s ease;
-    opacity: 0;
-  }
-
-  /* FAQ Styling */
-  #faq button {
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  #faq button.active {
-    color: #3b82f6;
-    background-color: #f0f9ff;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  #faq button+div {
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  #faq button.active+div {
-    border-top: 1px solid #e5e7eb;
-  }
-
-  .tool-card:hover::before {
-    animation: shimmer 1s ease-in-out;
-  }
-
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%) translateY(-100%) rotate(45deg);
-      opacity: 0;
+  <!-- Google Analytics Script (for tracking website performance) -->
+  <script async src="https://www.googletmanager.com/gtag/js?id=G-HE0LP1SSCR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
     }
+    gtag("js", new Date());
+    gtag("config", "G-HE0LP1SSCR");
+  </script>
 
-    50% {
-      opacity: 1;
-    }
+  <!-- AMP Auto Ads (for faster loading and ad placement on AMP pages) -->
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
-    100% {
-      transform: translateX(100%) translateY(100%) rotate(45deg);
-      opacity: 0;
-    }
+  <!-- Schema Markup for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Generator Esport - Tekno Ogi",
+    "description": "Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.",
+    "url": "https://tekno-ogi-generatoresporttools.my.id/",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Tekno Ogi"
+    },
+    "keywords": "esport generator, generator esport, tournament generator, esports tools, group generator, bracket generator, schedule generator",
+    "featureList": [
+      "Group Generator",
+      "Bracket Generator", 
+      "Schedule Generator",
+      "Technical Meeting",
+      "Match Reporting",
+      "Team Management",
+      "Certificate Generator",
+      "Poster Generator"
+    ]
   }
-
-  .floating {
-    animation: floating 3s ease-in-out infinite;
-  }
-
-  @keyframes floating {
-    0% {
-      transform: translateY(0px);
-    }
-
-    50% {
-      transform: translateY(-15px);
-    }
-
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  .particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .particle {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .pulse-animation {
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.05);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  /* Modern Text Animations */
-  .text-focus-in {
-    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  }
-
-  @keyframes text-focus-in {
-    0% {
-      filter: blur(12px);
-      opacity: 0;
-    }
-
-    100% {
-      filter: blur(0px);
-      opacity: 1;
-    }
-  }
-
-  .text-shadow-pop {
-    animation: text-shadow-pop 0.6s both;
-  }
-
-  @keyframes text-shadow-pop {
-    0% {
-      text-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-
-    100% {
-      text-shadow: 0 0 18px rgba(0, 100, 255, 0.7);
-    }
-  }
-
-  .tracking-in-expand {
-    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  }
-
-  @keyframes tracking-in-expand {
-    0% {
-      letter-spacing: -0.5em;
-      opacity: 0;
-    }
-
-    40% {
-      opacity: 0.6;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .marquee-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    margin-top: -70px;
-  }
-
-  .marquee-content {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-    padding-left: 100%;
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  .feature-badge {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: all 0.3s ease;
-  }
-
-  .feature-badge:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
-  }
-
-  .feature-badge::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg,
-        transparent,
-        rgba(59, 130, 246, 0.3),
-        transparent);
-    transform: rotate(45deg);
-    z-index: -1;
-    transition: all 0.6s ease;
-    animation: shine 3s infinite;
-  }
-
-  @keyframes shine {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 100%;
-    }
-  }
-
-  .carousel-container {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 400px;
-    /* Atur sesuai kebutuhan, misal 100vh untuk full layar */
-  }
-
-  .carousel-slide {
-    display: flex;
-    width: 500%;
-    /* 5 item * 100% */
-    height: 100%;
-    animation: carousel 20s infinite;
-  }
-
-  .carousel-item {
-    width: 20%;
-    /* 100% / 5 item */
-    height: 100%;
-    flex-shrink: 0;
-    display: flex;
-  }
-
-  .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  @keyframes carousel {
-
-    0%,
-    12% {
-      transform: translateX(0);
-    }
-
-    20%,
-    32% {
-      transform: translateX(-20%);
-    }
-
-    40%,
-    52% {
-      transform: translateX(-40%);
-    }
-
-    60%,
-    72% {
-      transform: translateX(-60%);
-    }
-
-    80%,
-    92% {
-      transform: translateX(-80%);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  /* Horizontal Scroll Animation for Feature Cards */
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(calc(-288px * 4));
-    }
-  }
-
-  .animate-scroll {
-    animation: scroll 30s linear infinite;
-    width: calc(288px * 16);
-    /* 8 cards × 2 sets for seamless loop */
-  }
-
-  .animate-scroll:hover {
-    animation-play-state: paused;
-  }
-</style>
+  </script>
 </head>
 
 <body class="bg-gray-100">
@@ -567,22 +192,6 @@
     </div>
   </nav>
 
-  <!-- Google AdSense Display Ad -->
-  <div class="ad-container bg-white shadow-md mx-auto max-w-4xl my-4 rounded-lg overflow-hidden" style="margin-top: 100px;">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789892641077279"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Display -->
-    <ins class="adsbygoogle"
-         style="display:block; text-align: center;"
-         data-ad-client="ca-pub-9789892641077279"
-         data-ad-slot="7216246003"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
   <!-- Hero/Beranda Section -->
   <section id="beranda" class="hero-bg text-white pt-32 pb-24 md:pt-40 md:pb-32 relative">
     <!-- Animated Particles -->
@@ -627,9 +236,8 @@
             <i class="fas fa-gamepad mr-2"></i>Generator Event Esport #1 di Indonesia
           </span>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-focus-in">
-            Tekno Ogi
             <span class="gradient-text text-shadow-pop">Generator Esport</span>
-            untuk Turnamen Profesional
+            Tekno Ogi untuk Turnamen Profesional
           </h1>
           <p class="text-lg md:text-xl mb-6 text-blue-100 max-w-2xl">
             Platform offline terbaik untuk mengelola event esport dengan
@@ -748,6 +356,27 @@
       </svg>
     </div>
   </section>
+
+  <!-- Google AdSense Display Ad -->
+  <div class="ad-container bg-white shadow-md mx-auto max-w-4xl my-8 rounded-lg overflow-hidden">
+    <div class="text-center py-3 bg-gradient-to-r from-blue-600 to-blue-800">
+      <span class="text-sm text-white font-medium">Iklan</span>
+    </div>
+    <div class="p-6">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789892641077279"
+           crossorigin="anonymous"></script>
+      <!-- Iklan Display -->
+      <ins class="adsbygoogle"
+           style="display:block; text-align: center; margin: 0 auto;"
+           data-ad-client="ca-pub-9789892641077279"
+           data-ad-slot="7216246003"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
 
   <!-- Tentang Kami Section -->
   <section id="tentang" class="py-20 bg-white">

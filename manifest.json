@@ -1,0 +1,21 @@
+{
+  "name": "Generator Esport - Tekno Ogi",
+  "short_name": "Generator Esport",
+  "description": "Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["sports", "utilities", "productivity"],
+  "keywords": ["esport generator", "generator esport", "tournament generator", "esports tools", "group generator", "bracket generator", "schedule generator"],
+  "lang": "id"
+}
