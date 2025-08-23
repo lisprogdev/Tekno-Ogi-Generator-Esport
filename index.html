@@ -133,35 +133,75 @@
         </div>
 
         <!-- Navigation Links - Desktop -->
-        <div class="hidden md:flex space-x-6">
-          <a href="index.html" class="text-blue-200 hover:text-white transition-colors font-medium border-b-2 border-blue-500">Home</a>
-          <a href="Page/tools.html" class="text-blue-200 hover:text-white transition-colors font-medium">Tools</a>
-          <a href="#about" class="text-blue-200 hover:text-white transition-colors font-medium">About Us</a>
-          <a href="#contact" class="text-blue-200 hover:text-white transition-colors font-medium">Contact</a>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="index.html#beranda" class="flex items-center text-blue-300 font-semibold">
+            <i class="fas fa-home mr-2"></i>
+            <span>Home</span>
+          </a>
+          <a href="Page/tools.html" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-tools mr-2"></i>
+            <span>Tools</span>
+          </a>
+          <a href="#tentang" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-info-circle mr-2"></i>
+            <span>About Us</span>
+          </a>
+          <a href="#faq" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-question-circle mr-2"></i>
+            <span>FAQ</span>
+          </a>
+          <a href="#kontak" class="flex items-center hover:text-blue-300 transition duration-300">
+            <i class="fas fa-envelope mr-2"></i>
+            <span>Contact</span>
+          </a>
+          <a href="https://saweria.co/khalisdev" target="_blank" rel="noopener noreferrer"
+            class="flex items-center bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-blue-950 font-bold py-2 px-4 rounded-lg transition duration-300">
+            <i class="fas fa-hand-holding-heart mr-2"></i>
+            <span>Donate</span>
+          </a>
         </div>
 
         <!-- Mobile Menu Button -->
         <div class="md:hidden">
-          <button id="mobile-menu-button" class="text-blue-200 hover:text-white focus:outline-none">
+          <button id="mobile-menu-button" type="button" class="text-white hover:text-blue-300 focus:outline-none">
             <i class="fas fa-bars text-xl"></i>
           </button>
         </div>
       </div>
 
-      <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu" class="md:hidden mt-4 hidden">
-        <div class="flex flex-col space-y-2 pb-4">
-          <a href="index.html" class="text-blue-200 hover:text-white transition-colors font-medium py-2 border-b border-blue-800">Home</a>
-          <a href="Page/tools.html" class="text-blue-200 hover:text-white transition-colors font-medium py-2 border-b border-blue-800">Tools</a>
-          <a href="#about" class="text-blue-200 hover:text-white transition-colors font-medium py-2 border-b border-blue-800">About Us</a>
-          <a href="#contact" class="text-blue-200 hover:text-white transition-colors font-medium py-2">Contact</a>
-        </div>
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="mobile-menu hidden md:hidden mt-4 pb-2">
+        <a href="index.html#beranda" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-home mr-2"></i>
+          <span>Home</span>
+        </a>
+        <a href="Page/tools.html" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-tools mr-2"></i>
+          <span>Tools</span>
+        </a>
+        <a href="#tentang" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-info-circle mr-2"></i>
+          <span>About Us</span>
+        </a>
+        <a href="#faq" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-question-circle mr-2"></i>
+          <span>FAQ</span>
+        </a>
+        <a href="#kontak" class="block py-2 px-4 text-blue-200 hover:bg-blue-900 rounded-md">
+          <i class="fas fa-envelope mr-2"></i>
+          <span>Contact</span>
+        </a>
+        <a href="https://saweria.co/khalisdev" target="_blank" rel="noopener noreferrer"
+          class="block py-2 px-4 mt-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-blue-950 font-bold rounded-lg">
+          <i class="fas fa-hand-holding-heart mr-2"></i>
+          <span>Donate</span>
+        </a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-bg text-white min-h-screen flex items-center relative pt-20">
+  <section id="beranda" class="hero-bg text-white min-h-screen flex items-center relative pt-20">
     <div class="container mx-auto px-4 text-center relative z-10">
       <div class="max-w-4xl mx-auto">
         <span class="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -177,7 +217,7 @@
           <a href="Page/tools.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
             <i class="fas fa-rocket mr-2"></i>Get Started Now
           </a>
-          <a href="#about" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-950 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+          <a href="#tentang" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-950 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
             <i class="fas fa-info-circle mr-2"></i>Learn More
           </a>
         </div>
@@ -222,7 +262,7 @@
   </div>
 
   <!-- About Section -->
-  <section id="about" class="about-bg py-20 relative">
+  <section id="tentang" class="about-bg py-20 relative">
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-4xl mx-auto text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
