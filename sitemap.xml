@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Halaman Utama -->
+  <!-- Main Page -->
   <url>
     <loc>https://tekno-ogi-generatoresporttools.my.id/</loc>
     <lastmod>2025-01-27</lastmod>
@@ -8,7 +8,7 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- Halaman Tools -->
+  <!-- Tools Page -->
   <url>
     <loc>https://tekno-ogi-generatoresporttools.my.id/Page/tools.html</loc>
     <lastmod>2025-01-27</lastmod>
@@ -16,7 +16,7 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- Halaman Group Generator -->
+  <!-- Group Generator Page -->
   <url>
     <loc>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Grup-Generator.html</loc>
     <lastmod>2025-01-27</lastmod>
@@ -24,7 +24,7 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Halaman Jadwal Generator -->
+  <!-- Schedule Generator Page -->
   <url>
     <loc>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Jadwal-Generator.html</loc>
     <lastmod>2025-01-27</lastmod>
@@ -32,7 +32,7 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Halaman Poster Generator -->
+  <!-- Poster Generator Page -->
   <url>
     <loc>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Poster-Generator.html</loc>
     <lastmod>2025-01-27</lastmod>

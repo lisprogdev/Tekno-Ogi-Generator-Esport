@@ -1,14 +1,14 @@
 {
-  "name": "Generator Esport Terbaik 2025 - Tekno Ogi",
+  "name": "Best Esport Generator 2025 - Tekno Ogi",
   "short_name": "Generator Esport",
-  "description": "Generator Esport Terbaik 2025 - Tools lengkap untuk turnamen Mobile Legends, Free Fire, PUBG Mobile. Group Generator Esport, Bracket Generator Esport, Schedule Generator Esport, dan tools esport lainnya.",
+  "description": "Best Esport Generator 2025 - Complete tools for Mobile Legends, Free Fire, PUBG Mobile tournaments. Group Generator Esport, Bracket Generator Esport, Schedule Generator Esport, and other esport tools.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1e40af",
   "theme_color": "#1e40af",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "id",
+  "lang": "en",
   "categories": ["sports", "utilities", "productivity"],
   "icons": [
     {
@@ -48,7 +48,7 @@
     {
       "name": "Group Generator Esport",
       "short_name": "Group Gen",
-      "description": "Buat grup turnamen esport dengan mudah",
+      "description": "Easily create esport tournament groups",
       "url": "/Page/Sub-Page/Grup-Generator.html",
       "icons": [
         {
@@ -58,9 +58,9 @@
       ]
     },
     {
-      "name": "Tools Esport",
+      "name": "Esport Tools",
       "short_name": "Tools",
-      "description": "Kumpulan tools esport lengkap",
+      "description": "Complete collection of esport tools",
       "url": "/Page/tools.html",
       "icons": [
         {
