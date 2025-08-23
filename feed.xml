@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Generator Esport - Tekno Ogi</title>
+    <title>Generator Esport Terbaik 2025 - Tekno Ogi</title>
+    <description>Generator Esport Terbaik 2025 - Tools lengkap untuk turnamen Mobile Legends, Free Fire, PUBG Mobile. Group Generator Esport, Bracket Generator Esport, Schedule Generator Esport, dan tools esport lainnya.</description>
     <link>https://tekno-ogi-generatoresporttools.my.id/</link>
-    <description>Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.</description>
-    <language>id</language>
-    <lastBuildDate>Wed, 19 Dec 2024 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://tekno-ogi-generatoresporttools.my.id/feed.xml" rel="self" type="application/rss+xml" />
+    <language>id</language>
+    <lastBuildDate>Mon, 27 Jan 2025 12:00:00 +0700</lastBuildDate>
+    <pubDate>Mon, 27 Jan 2025 12:00:00 +0700</pubDate>
     
     <item>
-      <title>Group Generator - Pembuat Grup Turnamen Esport</title>
+      <title>Generator Esport Terbaik 2025 - Tools Turnamen Game Lengkap</title>
+      <description>Generator Esport Terbaik 2025 - Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.</description>
+      <link>https://tekno-ogi-generatoresporttools.my.id/</link>
+      <guid>https://tekno-ogi-generatoresporttools.my.id/</guid>
+      <pubDate>Mon, 27 Jan 2025 12:00:00 +0700</pubDate>
+      <category>Generator Esport</category>
+      <category>Esport Generator</category>
+      <category>Tournament Generator</category>
+    </item>
+    
+    <item>
+      <title>Group Generator Esport Terbaik 2025 - Pembuat Grup Turnamen Esport</title>
+      <description>Group Generator Esport Terbaik 2025 - Buat dan atur grup turnamen esport dengan mudah menggunakan Group Generator Esport Tekno Ogi. Mendukung Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.</description>
       <link>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Grup-Generator.html</link>
-      <description>Buat grup turnamen esport dengan mudah menggunakan Group Generator. Mendukung Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.</description>
-      <pubDate>Wed, 19 Dec 2024 12:00:00 +0700</pubDate>
       <guid>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Grup-Generator.html</guid>
+      <pubDate>Mon, 27 Jan 2025 12:00:00 +0700</pubDate>
+      <category>Group Generator Esport</category>
+      <category>Esport Group Generator</category>
+      <category>Tournament Group Generator</category>
     </item>
     
     <item>
-      <title>Bracket Generator - Pembuat Bracket Turnamen Esport</title>
-      <link>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Jadwal-Generator.html</link>
-      <description>Buat bracket turnamen esport dengan Bracket Generator. Mendukung single elimination, double elimination, dan round robin.</description>
-      <pubDate>Wed, 19 Dec 2024 12:00:00 +0700</pubDate>
-      <guid>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Jadwal-Generator.html</guid>
-    </item>
-    
-    <item>
-      <title>Schedule Generator - Pembuat Jadwal Turnamen Esport</title>
-      <link>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Jadwal-Generator.html</link>
-      <description>Atur jadwal pertandingan turnamen esport dengan Schedule Generator. Ekspor ke PDF dan format lainnya.</description>
-      <pubDate>Wed, 19 Dec 2024 12:00:00 +0700</pubDate>
-      <guid>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Jadwal-Generator.html</guid>
-    </item>
-    
-    <item>
-      <title>Poster Generator - Pembuat Poster Turnamen Esport</title>
-      <link>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Poster-Generator.html</link>
-      <description>Buat poster turnamen esport yang menarik dengan Poster Generator. Template profesional untuk promosi event.</description>
-      <pubDate>Wed, 19 Dec 2024 12:00:00 +0700</pubDate>
-      <guid>https://tekno-ogi-generatoresporttools.my.id/Page/Sub-Page/Poster-Generator.html</guid>
+      <title>Tools Esport Lengkap - Generator Esport Terbaik 2025</title>
+      <description>Generator Esport Terbaik 2025 - Kumpulan tools esport lengkap untuk turnamen game. Group Generator Esport, Bracket Generator Esport, Schedule Generator Esport, dan tools esport lainnya untuk Mobile Legends, Free Fire, PUBG Mobile.</description>
+      <link>https://tekno-ogi-generatoresporttools.my.id/Page/tools.html</link>
+      <guid>https://tekno-ogi-generatoresporttools.my.id/Page/tools.html</guid>
+      <pubDate>Mon, 27 Jan 2025 12:00:00 +0700</pubDate>
+      <category>Esport Tools</category>
+      <category>Tournament Tools</category>
+      <category>Generator Esport Tools</category>
     </item>
   </channel>
 </rss>

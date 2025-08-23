@@ -1,21 +1,73 @@
 {
-  "name": "Generator Esport - Tekno Ogi",
+  "name": "Generator Esport Terbaik 2025 - Tekno Ogi",
   "short_name": "Generator Esport",
-  "description": "Platform offline terbaik untuk mengelola event esport dengan mudah. Buat grup, bracket, jadwal pertandingan untuk Mobile Legends, Free Fire, PUBG Mobile, dan game esport lainnya.",
+  "description": "Generator Esport Terbaik 2025 - Tools lengkap untuk turnamen Mobile Legends, Free Fire, PUBG Mobile. Group Generator Esport, Bracket Generator Esport, Schedule Generator Esport, dan tools esport lainnya.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
+  "background_color": "#1e40af",
   "theme_color": "#1e40af",
   "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "id",
+  "categories": ["sports", "utilities", "productivity"],
   "icons": [
     {
       "src": "images/logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    },
+    {
+      "src": "images/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "images/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
-  "categories": ["sports", "utilities", "productivity"],
-  "keywords": ["esport generator", "generator esport", "tournament generator", "esports tools", "group generator", "bracket generator", "schedule generator"],
-  "lang": "id"
+  "screenshots": [
+    {
+      "src": "images/logo.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/logo.svg",
+      "sizes": "750x1334",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Group Generator Esport",
+      "short_name": "Group Gen",
+      "description": "Buat grup turnamen esport dengan mudah",
+      "url": "/Page/Sub-Page/Grup-Generator.html",
+      "icons": [
+        {
+          "src": "images/logo.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Tools Esport",
+      "short_name": "Tools",
+      "description": "Kumpulan tools esport lengkap",
+      "url": "/Page/tools.html",
+      "icons": [
+        {
+          "src": "images/logo.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
 }

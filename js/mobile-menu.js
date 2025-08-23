@@ -1,20 +1,14 @@
-// Main JavaScript file for Tekno Ogi Generator Esport
+// Mobile Menu JavaScript - Tekno Ogi Generator Esport
+console.log('Mobile menu script loaded');
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing mobile menu...');
     
-    // Initialize mobile menu only
-    initMobileMenu();
-    
-    console.log('Mobile menu initialization complete');
-});
-
-// Mobile Menu Functionality
-function initMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
-    console.log('Mobile menu elements:', { 
-        button: mobileMenuButton, 
+    console.log('Elements found:', {
+        button: mobileMenuButton,
         menu: mobileMenu,
         buttonExists: !!mobileMenuButton,
         menuExists: !!mobileMenu
@@ -22,8 +16,6 @@ function initMobileMenu() {
     
     if (!mobileMenuButton || !mobileMenu) {
         console.error('Mobile menu elements not found!');
-        console.error('Button ID:', 'mobile-menu-button');
-        console.error('Menu ID:', 'mobile-menu');
         return;
     }
     
@@ -32,20 +24,19 @@ function initMobileMenu() {
         e.preventDefault();
         e.stopPropagation();
         
-        console.log('Mobile menu button clicked');
-        console.log('Current hidden state:', mobileMenu.classList.contains('hidden'));
+        console.log('Button clicked!');
+        console.log('Menu current classes:', mobileMenu.className);
+        console.log('Is hidden?', mobileMenu.classList.contains('hidden'));
         
         // Toggle hidden class
-        const isHidden = mobileMenu.classList.contains('hidden');
-        
-        if (isHidden) {
+        if (mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.remove('hidden');
-            console.log('Mobile menu shown - hidden class removed');
-            console.log('Menu classes:', mobileMenu.className);
+            console.log('Menu shown - hidden class removed');
+            console.log('Menu new classes:', mobileMenu.className);
         } else {
             mobileMenu.classList.add('hidden');
-            console.log('Mobile menu hidden - hidden class added');
-            console.log('Menu classes:', mobileMenu.className);
+            console.log('Menu hidden - hidden class added');
+            console.log('Menu new classes:', mobileMenu.className);
         }
     });
     
@@ -56,7 +47,7 @@ function initMobileMenu() {
     mobileLinks.forEach(link => {
         link.addEventListener('click', function() {
             mobileMenu.classList.add('hidden');
-            console.log('Mobile menu closed after link click');
+            console.log('Menu closed after link click');
         });
     });
     
@@ -64,7 +55,7 @@ function initMobileMenu() {
     document.addEventListener('click', function(e) {
         if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
             mobileMenu.classList.add('hidden');
-            console.log('Mobile menu closed after outside click');
+            console.log('Menu closed after outside click');
         }
     });
     
@@ -72,9 +63,9 @@ function initMobileMenu() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             mobileMenu.classList.add('hidden');
-            console.log('Mobile menu closed with Escape key');
+            console.log('Menu closed with Escape key');
         }
     });
     
-    console.log('Mobile menu initialized successfully');
-}
+    console.log('Mobile menu initialized successfully!');
+});
